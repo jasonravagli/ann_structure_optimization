@@ -4,7 +4,8 @@ import numpy as np
 
 class ParticleFunction:
     def __init__(self, f):
-        self.position = np.array([])
+        self.position = None
+        self.position_integer = None
         self.velocity = 0
         self.best_position = np.array([])  # position of the best value encountered by the particle
         self.best_value = math.inf  # best value of the objective function encountered by the particle
@@ -12,4 +13,4 @@ class ParticleFunction:
         self.function = f  # objective function
 
     def get_value(self):
-        return self.function(self.position)
+        return self.function(self.position_integer)
