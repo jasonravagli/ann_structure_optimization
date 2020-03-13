@@ -1,9 +1,15 @@
+import keras
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.callbacks import EarlyStopping
 import test_functions
 import pso
 import dataset_reader
 import time
 import logging
 import grid_search
+import quasi_random_search
+import plotter
 from ParticleFunctionFactory import ParticleFunctionFactory
 from ParticleAnnFactory import ParticleAnnFactory
 from ParticleAnnKFoldFactory import ParticleAnnKFoldFactory
@@ -20,6 +26,35 @@ logging.basicConfig(filename='output/output.log', format='%(message)s', level=lo
 #
 # print("Minimum point: " + str(min_point))
 # print("Minimum value: " + str(min_value))
+
+def article_configuration_training(preprocessing):
+    n_fold = 5
+    generate_validation_set = False
+
+    n_neurons = 467
+    optimizer = 'adam'
+    learning_rate = 0.00158
+    n_epochs = 375
+    n_batches = 3
+
+    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
+                                                                                                           generate_validation_set, preprocessing)
+    y_train = keras.utils.to_categorical(y_train, 2)
+
+    batch_size = int(len(x_train)/n_batches)
+
+    model = Sequential()
+    model.add(Dense(n_neurons, activation='relu'))
+    model.add(Dense(2, activation='sigmoid'))
+    model.compile(optimizer=keras.optimizers.Adam(learning_rate=learning_rate), loss='binary_crossentropy', metrics=['accuracy'])
+    es = EarlyStopping(monitor='val_accuracy', mode='max', patience=20, min_delta=0.005, verbose=1)
+    model.fit(x_train, y_train, epochs=n_epochs, batch_size=32, verbose=0, validation_split=0.25, callbacks=[es])
+
+    index_accuracy = model.metrics_names.index('accuracy')
+    accuracy = model.evaluate(x_test, y_test)[index_accuracy]
+
+    #print("\nAccuracy " + str(accuracy))
+    return accuracy
 
 
 def pso_optimization(generate_validation_set, n_fold):
@@ -84,6 +119,9 @@ def pso_optimization(generate_validation_set, n_fold):
     logging.info("Execution time : " + ("{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds)))
 
     # With the optimal structure found retrain the network and calculate accuracy on test set
+    n_layers = int(min_point[0])
+    n_neurons = int(min_point[1])
+
     if generate_validation_set:
         ann = Ann()
         ann.x_train_set = x_train
@@ -92,18 +130,17 @@ def pso_optimization(generate_validation_set, n_fold):
         ann.y_valid_set = y_valid
         ann.x_test_set = x_test
         ann.y_test_set = y_test
+        ann.create_model(n_layers, n_neurons, len(ann.x_test_set[0]), len(ann.y_test_set[0]))
     else:
-        ann = AnnKFold(n_fold)
+        ann = Ann()
         ann.x_train_set = x_train
-        ann.y_train_set = y_train
+        ann.y_train_set = keras.utils.to_categorical(y_train, 2)
         ann.x_test_set = x_test
         ann.y_test_set = y_test
+        ann.create_model(n_layers, n_neurons, len(ann.x_test_set[0]), len(ann.y_test_set[0]))
+        validation_split = 0.25
+        ann.train_model(validation_split)
 
-    n_layers = int(min_point[0])
-    n_neurons = int(min_point[1])
-
-    ann.create_model(n_layers, n_neurons, len(ann.x_test_set[0]), len(ann.y_test_set[0]))
-    ann.train_model()
     accuracy = ann.evaluate_model()
 
     print("\nAccuracy with " + str(n_layers) + " layers and " + str(n_neurons) + " neurons: " + str(accuracy))
@@ -146,6 +183,9 @@ def grid_search_optimization(generate_validation_set, n_fold):
     logging.info("Execution time : " + ("{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds)))
 
     # With the optimal structure found retrain the network and calculate accuracy on test set
+    n_layers = int(min_point[0])
+    n_neurons = int(min_point[1])
+
     if generate_validation_set:
         ann = Ann()
         ann.x_train_set = x_train
@@ -154,18 +194,73 @@ def grid_search_optimization(generate_validation_set, n_fold):
         ann.y_valid_set = y_valid
         ann.x_test_set = x_test
         ann.y_test_set = y_test
+        ann.create_model(n_layers, n_neurons, len(ann.x_test_set[0]), len(ann.y_test_set[0]))
     else:
-        ann = AnnKFold(n_fold)
+        ann = Ann()
         ann.x_train_set = x_train
-        ann.y_train_set = y_train
+        ann.y_train_set = keras.utils.to_categorical(y_train, 2)
         ann.x_test_set = x_test
         ann.y_test_set = y_test
+        ann.create_model(n_layers, n_neurons, len(ann.x_test_set[0]), len(ann.y_test_set[0]))
+        validation_split = 0.25
+        ann.train_model(validation_split)
 
+    accuracy = ann.evaluate_model()
+
+    print("\nAccuracy with " + str(n_layers) + " layers and " + str(n_neurons) + " neurons: " + str(accuracy))
+    logging.info("Accuracy on test set : " + str(accuracy))
+
+
+def quasi_random_optimization(generation_validation_set, n_fold):
+
+    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
+                                                                                                           generate_validation_set)
+
+    print("\n**** Dataset statistics *****")
+    print("Training samples: " + str(len(x_train)))
+    if generate_validation_set:
+        print("Validation samples: " + str(len(x_valid)))
+    print("Test samples: " + str(len(x_test)))
+
+    n = 2  # Problem dimension (hyperparameters to be tuned)
+
+    n_combinations = 10
+    layers_bounds = (1, 10)
+    neurons_bounds = (4, 384)
+
+    logging.info("\n\n***** Quasi-Random Search Configuration ******")
+    logging.info("combinations : " + str(n_combinations))
+    logging.info("bounds : " + str([layers_bounds, neurons_bounds]))
+
+    start = time.time()
+    min_point, min_value = quasi_random_search.quasi_random_search(n_combinations, n, [layers_bounds, neurons_bounds], x_train, y_train, x_test, y_test, n_fold)
+    end = time.time()
+
+    hours, rem = divmod(end - start, 3600)
+    minutes, seconds = divmod(rem, 60)
+
+    print("\nMinimum point: " + str(min_point))
+    print("Minimum value: " + str(min_value))
+    print("Execution time : " + ("{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds)))
+    logging.info("\n\n***** Optimal configuration found by Quasi-Random Search ******")
+    logging.info("N. hidden layers : " + str(min_point[0]))
+    logging.info("N. neurons per layer : " + str(min_point[1]))
+    logging.info("Accuracy on validation set : " + str(1 - min_value))
+    logging.info("Execution time : " + ("{:0>2}:{:0>2}:{:05.2f}".format(int(hours), int(minutes), seconds)))
+
+    # With the optimal structure found retrain the network and calculate accuracy on test set
     n_layers = int(min_point[0])
     n_neurons = int(min_point[1])
 
+    ann = Ann()
+    ann.x_train_set = x_train
+    ann.y_train_set = keras.utils.to_categorical(y_train, 2)
+    ann.x_test_set = x_test
+    ann.y_test_set = y_test
     ann.create_model(n_layers, n_neurons, len(ann.x_test_set[0]), len(ann.y_test_set[0]))
-    ann.train_model()
+    validation_split = 0.25
+    ann.train_model(validation_split)
+
     accuracy = ann.evaluate_model()
 
     print("\nAccuracy with " + str(n_layers) + " layers and " + str(n_neurons) + " neurons: " + str(accuracy))
@@ -177,5 +272,31 @@ if __name__ == "__main__":
     generate_validation_set = False
     n_fold = 5
 
-    grid_search_optimization(generate_validation_set, n_fold)
-    # pso_optimization(generate_validation_set, n_fold)
+    # grid_search_optimization(generate_validation_set, n_fold)
+    pso_optimization(generate_validation_set, n_fold)
+    # quasi_random_optimization(generate_validation_set, n_fold)
+
+    # accuracy = 0
+    # for i in range(100):
+    #     accuracy += article_configuration_training(dataset_reader.DatasetPreprocessing.NO_PREPROCESSING)
+    #
+    # none_accuracy = accuracy/100
+
+    # accuracy = 0
+    # for i in range(100):
+    #     print("Iteration " + str(i))
+    #     accuracy += article_configuration_training(dataset_reader.DatasetPreprocessing.NORMALIZE)
+    #
+    # normalize_accuracy = accuracy/100
+
+    # accuracy = 0
+    # for i in range(100):
+    #     accuracy += article_configuration_training(dataset_reader.DatasetPreprocessing.STANDARDIZE)
+    #
+    # standardize_accuracy = accuracy/100
+
+    # print("NONE: " + str(none_accuracy))
+    # print("NORMALIZE: " + str(normalize_accuracy))
+    # print("STANDARDIZE: " + str(standardize_accuracy))
+
+    #plotter.generate_plots()

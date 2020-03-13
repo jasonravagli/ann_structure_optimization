@@ -34,12 +34,20 @@ class AnnKFold:
             else:
                 self.model.add(Dense(n_neurons, activation='relu'))
 
+        # if n_classes > 2:
+        #     self.model.add(Dense(n_classes, activation='softmax'))
+        #     self.model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+        # else:
+        #     self.model.add(Dense(n_classes, activation='sigmoid'))
+        #     self.model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accuracy'])
+
+        learning_rate = 0.00158  # Learning rate from article
         if n_classes > 2:
             self.model.add(Dense(n_classes, activation='softmax'))
-            self.model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+            self.model.compile(optimizer=keras.optimizers.Adam(learning_rate=learning_rate), loss='binary_crossentropy', metrics=['accuracy'])
         else:
             self.model.add(Dense(n_classes, activation='sigmoid'))
-            self.model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accuracy'])
+            self.model.compile(optimizer=keras.optimizers.Adam(learning_rate=learning_rate), loss='binary_crossentropy', metrics=['accuracy'])
 
     def train_model(self):
         """

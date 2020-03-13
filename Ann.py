@@ -1,3 +1,4 @@
+import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.callbacks import EarlyStopping
@@ -34,17 +35,29 @@ class Ann:
             else:
                 self.model.add(Dense(n_neurons, activation='relu'))
 
+        # if n_classes > 2:
+        #     self.model.add(Dense(n_classes, activation='softmax'))
+        #     self.model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+        # else:
+        #     self.model.add(Dense(n_classes, activation='sigmoid'))
+        #     self.model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accuracy'])
+
+        learning_rate = 0.00158  # Learning rate from article
         if n_classes > 2:
             self.model.add(Dense(n_classes, activation='softmax'))
-            self.model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+            self.model.compile(optimizer=keras.optimizers.Adam(learning_rate=learning_rate), loss='binary_crossentropy', metrics=['accuracy'])
         else:
             self.model.add(Dense(n_classes, activation='sigmoid'))
-            self.model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accuracy'])
+            self.model.compile(optimizer=keras.optimizers.Adam(learning_rate=learning_rate), loss='binary_crossentropy', metrics=['accuracy'])
 
-    def train_model(self):
-        es = EarlyStopping(monitor='val_accuracy', mode='max', patience=50, min_delta=0.005, verbose=1)
-        self.model.fit(self.x_train_set, self.y_train_set, validation_data=(self.x_valid_set, self.y_valid_set),
+    def train_model(self, validation_split=None):
+        es = EarlyStopping(monitor='val_accuracy', mode='max', patience=20, min_delta=0.005, verbose=1)
+        if validation_split is None:
+            self.model.fit(self.x_train_set, self.y_train_set, validation_data=(self.x_valid_set, self.y_valid_set),
                        epochs=500, batch_size=32, verbose=0, callbacks=[es])
+        else:
+            self.model.fit(self.x_train_set, self.y_train_set, validation_split=validation_split,
+                           epochs=500, batch_size=32, verbose=0, callbacks=[es])
 
     def validate_model(self):
         # index_loss = self.model.metrics_names.index('loss')
