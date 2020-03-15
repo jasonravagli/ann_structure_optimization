@@ -10,6 +10,7 @@ import logging
 import grid_search
 import quasi_random_search
 import plotter
+import shutil
 from ParticleFunctionFactory import ParticleFunctionFactory
 from ParticleAnnFactory import ParticleAnnFactory
 from ParticleAnnKFoldFactory import ParticleAnnKFoldFactory
@@ -18,7 +19,8 @@ from AnnKFold import AnnKFold
 from pathlib import Path
 
 # Configuring logging to file
-logging.basicConfig(filename='output/output.log', format='%(message)s', level=logging.DEBUG)
+log_filename = 'output/output.log'
+logging.basicConfig(filename=log_filename, format='%(message)s', level=logging.DEBUG)
 
 
 # particleFactory = ParticleFunctionFactory(test_functions.himmelblau)
@@ -57,11 +59,11 @@ def article_configuration_training(preprocessing):
     return accuracy
 
 
-def pso_optimization(generate_validation_set, n_fold):
+def pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test, initialization_type=pso.InitializationType.QUASI_RANDOM, use_local_search=False):
     print("\nReading dataset...")
 
-    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-                                                                                                           generate_validation_set)
+    # x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
+    #                                                                                                        generate_validation_set)
 
     print("\n**** Dataset statistics *****")
     print("Training samples: " + str(len(x_train)))
@@ -82,7 +84,8 @@ def pso_optimization(generate_validation_set, n_fold):
     neurons_bounds = (4, 384)
 
     pso_hyperparameters = pso.PSOHyperparameters(n)
-    pso_hyperparameters.w = 0.5
+    pso_hyperparameters.w_start = 0.9
+    pso_hyperparameters.w_end = 0.4
     pso_hyperparameters.c1 = 0.5
     pso_hyperparameters.c2 = 0.5
     pso_hyperparameters.swarm_size = 10
@@ -90,9 +93,12 @@ def pso_optimization(generate_validation_set, n_fold):
     pso_hyperparameters.min_init_velocity = [1, 4]
     pso_hyperparameters.max_init_velocity = [3, 32]
     pso_hyperparameters.max_velocity = [3, 32]
+    pso_hyperparameters.initialization_type = initialization_type
+    pso_hyperparameters.use_local_search = use_local_search
 
     logging.info("\n\n***** PSO Configuration ******")
-    logging.info("w : " + str(pso_hyperparameters.w))
+    logging.info("w_start : " + str(pso_hyperparameters.w_start))
+    logging.info("w_end : " + str(pso_hyperparameters.w_end))
     logging.info("c1 : " + str(pso_hyperparameters.c1))
     logging.info("c2 : " + str(pso_hyperparameters.c2))
     logging.info("swarm_size : " + str(pso_hyperparameters.swarm_size))
@@ -101,6 +107,7 @@ def pso_optimization(generate_validation_set, n_fold):
     logging.info("max_init_velocity : " + str(pso_hyperparameters.max_init_velocity))
     logging.info("max_velocity : " + str(pso_hyperparameters.max_velocity))
     logging.info("bounds : " + str([layers_bounds, neurons_bounds]))
+    logging.info("initialization type : " + str(pso_hyperparameters.initialization_type))
 
     start = time.time()
     min_point, min_value = pso.get_minimum(particleFactory, n, [layers_bounds, neurons_bounds], pso_hyperparameters)
@@ -147,12 +154,13 @@ def pso_optimization(generate_validation_set, n_fold):
     logging.info("Accuracy on test set : " + str(accuracy))
 
 
-def grid_search_optimization(generate_validation_set, n_fold):
+def grid_search_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test):
     grid = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            [4, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 272, 288, 304, 320, 336, 352, 368, 384]]
+            # [4, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 272, 288, 304, 320, 336, 352, 368, 384]]
+            [4, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384]]
 
-    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-                                                                                                           generate_validation_set)
+    # x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
+    #                                                                                                        generate_validation_set)
 
     print("\n**** Dataset statistics *****")
     print("Training samples: " + str(len(x_train)))
@@ -211,10 +219,10 @@ def grid_search_optimization(generate_validation_set, n_fold):
     logging.info("Accuracy on test set : " + str(accuracy))
 
 
-def quasi_random_optimization(generation_validation_set, n_fold):
+def quasi_random_optimization(generation_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test):
 
-    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-                                                                                                           generate_validation_set)
+    # x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
+    #                                                                                                        generate_validation_set)
 
     print("\n**** Dataset statistics *****")
     print("Training samples: " + str(len(x_train)))
@@ -268,35 +276,33 @@ def quasi_random_optimization(generation_validation_set, n_fold):
 
 
 if __name__ == "__main__":
+    n_experiments = 10
+
     # False = use K-Fold cross validation during training; True = use fixed validation set
     generate_validation_set = False
     n_fold = 5
+    preprocessing = dataset_reader.DatasetPreprocessing.NORMALIZE
 
-    # grid_search_optimization(generate_validation_set, n_fold)
-    pso_optimization(generate_validation_set, n_fold)
-    # quasi_random_optimization(generate_validation_set, n_fold)
+    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
+                                                                                                           generate_validation_set, preprocessing)
 
-    # accuracy = 0
-    # for i in range(100):
-    #     accuracy += article_configuration_training(dataset_reader.DatasetPreprocessing.NO_PREPROCESSING)
-    #
-    # none_accuracy = accuracy/100
+    for i in range(n_experiments):
+        # open(log_filename, 'w').close()  # Empty log file
+        # grid_search_optimization(generate_validation_set, n_fold)
+        # shutil.copy(log_filename, "results_grid/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
+        #
+        # open(log_filename, 'w').close()
+        # pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test)
+        # shutil.copy(log_filename, "results_pso/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
+        #
+        # open(log_filename, 'w').close()
+        # pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test, pso.InitializationType.QUASI_RANDOM_USING_BORDER)
+        # shutil.copy(log_filename, "results_pso_border_init/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
 
-    # accuracy = 0
-    # for i in range(100):
-    #     print("Iteration " + str(i))
-    #     accuracy += article_configuration_training(dataset_reader.DatasetPreprocessing.NORMALIZE)
-    #
-    # normalize_accuracy = accuracy/100
+        open(log_filename, 'w').close()
+        pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test, pso.InitializationType.QUASI_RANDOM_USING_BORDER, True)
+        shutil.copy(log_filename, "results_pso_local_search/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
 
-    # accuracy = 0
-    # for i in range(100):
-    #     accuracy += article_configuration_training(dataset_reader.DatasetPreprocessing.STANDARDIZE)
-    #
-    # standardize_accuracy = accuracy/100
-
-    # print("NONE: " + str(none_accuracy))
-    # print("NORMALIZE: " + str(normalize_accuracy))
-    # print("STANDARDIZE: " + str(standardize_accuracy))
-
-    #plotter.generate_plots()
+        # open(log_filename, 'w').close()
+        # quasi_random_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test)
+        # shutil.copy(log_filename, "results_quasi_random/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")

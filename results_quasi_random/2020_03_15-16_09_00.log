@@ -1,0 +1,73 @@
+
+
+***** Quasi-Random Search Configuration ******
+combinations : 10
+bounds : [(1, 10), (4, 384)]
+
+
+Combination 1 out of 10
+N. layers : 6
+N. neurons : 194
+Accuracy on validation set : 0.739905571937561
+
+
+Combination 2 out of 10
+N. layers : 8
+N. neurons : 99
+Accuracy on validation set : 0.7677476882934571
+
+
+Combination 3 out of 10
+N. layers : 3
+N. neurons : 289
+Accuracy on validation set : 0.7557317614555359
+
+
+Combination 4 out of 10
+N. layers : 4
+N. neurons : 146
+Accuracy on validation set : 0.751924455165863
+
+
+Combination 5 out of 10
+N. layers : 9
+N. neurons : 336
+Accuracy on validation set : 0.7459432005882263
+
+
+Combination 6 out of 10
+N. layers : 7
+N. neurons : 52
+Accuracy on validation set : 0.7595598697662354
+
+
+Combination 7 out of 10
+N. layers : 2
+N. neurons : 242
+Accuracy on validation set : 0.7524768352508545
+
+
+Combination 8 out of 10
+N. layers : 3
+N. neurons : 123
+Accuracy on validation set : 0.7508404612541199
+
+
+Combination 9 out of 10
+N. layers : 7
+N. neurons : 313
+Accuracy on validation set : 0.7546062111854553
+
+
+Combination 10 out of 10
+N. layers : 9
+N. neurons : 28
+Accuracy on validation set : 0.7459342956542969
+
+
+***** Optimal configuration found by Quasi-Random Search ******
+N. hidden layers : 8
+N. neurons per layer : 99
+Accuracy on validation set : 0.23225231170654292
+Execution time : 00:07:49.95
+Accuracy on test set : 0.769565224647522
