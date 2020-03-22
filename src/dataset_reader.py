@@ -16,7 +16,7 @@ def read_diabetic_retinopathy_debrecen(n_fold, generate_validation_set, preproce
     :return: Dataset features and labels as three separate numpy arrays for each type of set (train, validation and test)
     """
 
-    data, meta = arff.loadarff("datasets/messidor_features.arff")
+    data, meta = arff.loadarff("../datasets/messidor_features.arff")
 
     features_cols = meta.names()[:-1]
 

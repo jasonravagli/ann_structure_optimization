@@ -315,9 +315,10 @@ def local_search(particle, n , best_value_updated, best_position_updated):
     particle.position_integer = position_integer_3
     particle_value_updated_3, best_value_updated, best_position_updated = evaluate_particle(particle, best_value_updated, best_position_updated)
 
+    list_positions = [particle_value_updated_0, particle_value_updated_1, particle_value_updated_2, particle_value_updated_3]
     list_values = [particle_value_updated_0, particle_value_updated_1, particle_value_updated_2, particle_value_updated_3]
     particle_value_updated = min(list_values)
-    particle.position_integer = list_values.index(particle_value_updated)
+    particle.position_integer = list_positions[list_values.index(particle_value_updated)]
     return particle_value_updated, best_value_updated, best_position_updated
 
 

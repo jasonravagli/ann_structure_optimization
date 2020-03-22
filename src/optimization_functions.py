@@ -2,32 +2,16 @@ import keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.callbacks import EarlyStopping
-import test_functions
+
 import pso
 import dataset_reader
 import time
 import logging
 import grid_search
 import quasi_random_search
-import plotter
-import shutil
-from ParticleFunctionFactory import ParticleFunctionFactory
 from ParticleAnnFactory import ParticleAnnFactory
 from ParticleAnnKFoldFactory import ParticleAnnKFoldFactory
 from Ann import Ann
-from AnnKFold import AnnKFold
-from pathlib import Path
-
-# Configuring logging to file
-log_filename = 'output/output.log'
-logging.basicConfig(filename=log_filename, format='%(message)s', level=logging.DEBUG)
-
-
-# particleFactory = ParticleFunctionFactory(test_functions.himmelblau)
-# min_point, min_value = pso.get_minimum(particleFactory, 2, [(-10, 10), (-10, 10)])
-#
-# print("Minimum point: " + str(min_point))
-# print("Minimum value: " + str(min_value))
 
 def article_configuration_training(preprocessing):
     n_fold = 5
@@ -108,6 +92,7 @@ def pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid,
     logging.info("max_velocity : " + str(pso_hyperparameters.max_velocity))
     logging.info("bounds : " + str([layers_bounds, neurons_bounds]))
     logging.info("initialization type : " + str(pso_hyperparameters.initialization_type))
+    logging.info("use local search : " + str(pso_hyperparameters.use_local_search))
 
     start = time.time()
     min_point, min_value = pso.get_minimum(particleFactory, n, [layers_bounds, neurons_bounds], pso_hyperparameters)
@@ -219,7 +204,7 @@ def grid_search_optimization(generate_validation_set, n_fold, x_train, y_train, 
     logging.info("Accuracy on test set : " + str(accuracy))
 
 
-def quasi_random_optimization(generation_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test):
+def quasi_random_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test):
 
     # x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
     #                                                                                                        generate_validation_set)
@@ -273,36 +258,3 @@ def quasi_random_optimization(generation_validation_set, n_fold, x_train, y_trai
 
     print("\nAccuracy with " + str(n_layers) + " layers and " + str(n_neurons) + " neurons: " + str(accuracy))
     logging.info("Accuracy on test set : " + str(accuracy))
-
-
-if __name__ == "__main__":
-    n_experiments = 10
-
-    # False = use K-Fold cross validation during training; True = use fixed validation set
-    generate_validation_set = False
-    n_fold = 5
-    preprocessing = dataset_reader.DatasetPreprocessing.NORMALIZE
-
-    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-                                                                                                           generate_validation_set, preprocessing)
-
-    for i in range(n_experiments):
-        # open(log_filename, 'w').close()  # Empty log file
-        # grid_search_optimization(generate_validation_set, n_fold)
-        # shutil.copy(log_filename, "results_grid/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
-        #
-        # open(log_filename, 'w').close()
-        # pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test)
-        # shutil.copy(log_filename, "results_pso/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
-        #
-        # open(log_filename, 'w').close()
-        # pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test, pso.InitializationType.QUASI_RANDOM_USING_BORDER)
-        # shutil.copy(log_filename, "results_pso_border_init/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
-
-        open(log_filename, 'w').close()
-        pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test, pso.InitializationType.QUASI_RANDOM_USING_BORDER, True)
-        shutil.copy(log_filename, "results_pso_local_search/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
-
-        # open(log_filename, 'w').close()
-        # quasi_random_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test)
-        # shutil.copy(log_filename, "results_quasi_random/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")

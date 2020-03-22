@@ -5,13 +5,48 @@ w_start : 0.9
 w_end : 0.4
 c1 : 0.5
 c2 : 0.5
-swarm_size : 10
-num_generations : 10
+swarm_size : 2
+num_generations : 1
 min_init_velocity : [1, 4]
 max_init_velocity : [3, 32]
 max_velocity : [3, 32]
 bounds : [(1, 10), (4, 384)]
 initialization type : InitializationType.QUASI_RANDOM
+use local search : False
 
 
 ***** Particles initialization *****
+
+Particle 0
+Position : [  5.5 194. ]
+Velocity : [0. 0.]
+
+Particle 1
+Position : [ 7.75 99.  ]
+Velocity : [0. 0.]
+
+
+***** Particle generation 0 ******
+
+Particle 0
+New position : [  6.38088637 162.        ]
+New position (int) : [  6. 162.]
+New velocity : [  0.88088637 -32.        ]
+Objective function value : 0.2513275146484375
+
+Particle 1
+New position : [ 7.84390409 99.        ]
+New position (int) : [ 8. 99.]
+New velocity : [0.09390409 0.        ]
+Objective function value : 0.2714956045150757
+End of generation
+Best position : [ 8. 99.]
+Best objective function value : 0.23934426307678225
+
+
+***** Optimal configuration found by PSO ******
+N. hidden layers : 8.0
+N. neurons per layer : 99.0
+Accuracy on validation set : 0.7606557369232178
+Execution time : 00:02:20.36
+Accuracy on test set : 0.760869562625885
