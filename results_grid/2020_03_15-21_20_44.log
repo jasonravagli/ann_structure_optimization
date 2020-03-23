@@ -1,0 +1,790 @@
+***** Grid Search configuration *****
+Grid: [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [4, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384]]
+
+
+Combination 1 out of 130
+N. layers : 1
+N. neurons : 4
+Accuracy on validation set : 0.7022927165031433
+
+
+Combination 2 out of 130
+N. layers : 1
+N. neurons : 32
+Accuracy on validation set : 0.7284568786621094
+
+
+Combination 3 out of 130
+N. layers : 1
+N. neurons : 64
+Accuracy on validation set : 0.7186505198478699
+
+
+Combination 4 out of 130
+N. layers : 1
+N. neurons : 96
+Accuracy on validation set : 0.7492130041122437
+
+
+Combination 5 out of 130
+N. layers : 1
+N. neurons : 128
+Accuracy on validation set : 0.7323206186294555
+
+
+Combination 6 out of 130
+N. layers : 1
+N. neurons : 160
+Accuracy on validation set : 0.7421329259872437
+
+
+Combination 7 out of 130
+N. layers : 1
+N. neurons : 192
+Accuracy on validation set : 0.7361071467399597
+
+
+Combination 8 out of 130
+N. layers : 1
+N. neurons : 224
+Accuracy on validation set : 0.738307785987854
+
+
+Combination 9 out of 130
+N. layers : 1
+N. neurons : 256
+Accuracy on validation set : 0.741568660736084
+
+
+Combination 10 out of 130
+N. layers : 1
+N. neurons : 288
+Accuracy on validation set : 0.7453938007354737
+
+
+Combination 11 out of 130
+N. layers : 1
+N. neurons : 320
+Accuracy on validation set : 0.7382870078086853
+
+
+Combination 12 out of 130
+N. layers : 1
+N. neurons : 352
+Accuracy on validation set : 0.7339183926582337
+
+
+Combination 13 out of 130
+N. layers : 1
+N. neurons : 384
+Accuracy on validation set : 0.7497475743293762
+
+
+Combination 14 out of 130
+N. layers : 2
+N. neurons : 4
+Accuracy on validation set : 0.7590282797813416
+
+
+Combination 15 out of 130
+N. layers : 2
+N. neurons : 32
+Accuracy on validation set : 0.765000581741333
+
+
+Combination 16 out of 130
+N. layers : 2
+N. neurons : 64
+Accuracy on validation set : 0.7535548806190491
+
+
+Combination 17 out of 130
+N. layers : 2
+N. neurons : 96
+Accuracy on validation set : 0.7595450282096863
+
+
+Combination 18 out of 130
+N. layers : 2
+N. neurons : 128
+Accuracy on validation set : 0.752438223361969
+
+
+Combination 19 out of 130
+N. layers : 2
+N. neurons : 160
+Accuracy on validation set : 0.743199098110199
+
+
+Combination 20 out of 130
+N. layers : 2
+N. neurons : 192
+Accuracy on validation set : 0.7649917006492615
+
+
+Combination 21 out of 130
+N. layers : 2
+N. neurons : 224
+Accuracy on validation set : 0.7426823616027832
+
+
+Combination 22 out of 130
+N. layers : 2
+N. neurons : 256
+Accuracy on validation set : 0.7546388506889343
+
+
+Combination 23 out of 130
+N. layers : 2
+N. neurons : 288
+Accuracy on validation set : 0.7371792554855346
+
+
+Combination 24 out of 130
+N. layers : 2
+N. neurons : 320
+Accuracy on validation set : 0.751894748210907
+
+
+Combination 25 out of 130
+N. layers : 2
+N. neurons : 352
+Accuracy on validation set : 0.7476003766059875
+
+
+Combination 26 out of 130
+N. layers : 2
+N. neurons : 384
+Accuracy on validation set : 0.7710293412208558
+
+
+Combination 27 out of 130
+N. layers : 3
+N. neurons : 4
+Accuracy on validation set : 0.5332620501518249
+
+
+Combination 28 out of 130
+N. layers : 3
+N. neurons : 32
+Accuracy on validation set : 0.7579086661338806
+
+
+Combination 29 out of 130
+N. layers : 3
+N. neurons : 64
+Accuracy on validation set : 0.7584551095962524
+
+
+Combination 30 out of 130
+N. layers : 3
+N. neurons : 96
+Accuracy on validation set : 0.7557525634765625
+
+
+Combination 31 out of 130
+N. layers : 3
+N. neurons : 128
+Accuracy on validation set : 0.727438235282898
+
+
+Combination 32 out of 130
+N. layers : 3
+N. neurons : 160
+Accuracy on validation set : 0.7546863794326782
+
+
+Combination 33 out of 130
+N. layers : 3
+N. neurons : 192
+Accuracy on validation set : 0.7382959008216858
+
+
+Combination 34 out of 130
+N. layers : 3
+N. neurons : 224
+Accuracy on validation set : 0.750855314731598
+
+
+Combination 35 out of 130
+N. layers : 3
+N. neurons : 256
+Accuracy on validation set : 0.7562901020050049
+
+
+Combination 36 out of 130
+N. layers : 3
+N. neurons : 288
+Accuracy on validation set : 0.7295794725418091
+
+
+Combination 37 out of 130
+N. layers : 3
+N. neurons : 320
+Accuracy on validation set : 0.7367219090461731
+
+
+Combination 38 out of 130
+N. layers : 3
+N. neurons : 352
+Accuracy on validation set : 0.7671596646308899
+
+
+Combination 39 out of 130
+N. layers : 3
+N. neurons : 384
+Accuracy on validation set : 0.7426407694816589
+
+
+Combination 40 out of 130
+N. layers : 4
+N. neurons : 4
+Accuracy on validation set : 0.5332620501518249
+
+
+Combination 41 out of 130
+N. layers : 4
+N. neurons : 32
+Accuracy on validation set : 0.7492278456687927
+
+
+Combination 42 out of 130
+N. layers : 4
+N. neurons : 64
+Accuracy on validation set : 0.7622535109519959
+
+
+Combination 43 out of 130
+N. layers : 4
+N. neurons : 96
+Accuracy on validation set : 0.7595509648323059
+
+
+Combination 44 out of 130
+N. layers : 4
+N. neurons : 128
+Accuracy on validation set : 0.7388453364372254
+
+
+Combination 45 out of 130
+N. layers : 4
+N. neurons : 160
+Accuracy on validation set : 0.765526270866394
+
+
+Combination 46 out of 130
+N. layers : 4
+N. neurons : 192
+Accuracy on validation set : 0.7454710125923156
+
+
+Combination 47 out of 130
+N. layers : 4
+N. neurons : 224
+Accuracy on validation set : 0.7371822237968445
+
+
+Combination 48 out of 130
+N. layers : 4
+N. neurons : 256
+Accuracy on validation set : 0.7442771553993225
+
+
+Combination 49 out of 130
+N. layers : 4
+N. neurons : 288
+Accuracy on validation set : 0.7361220002174378
+
+
+Combination 50 out of 130
+N. layers : 4
+N. neurons : 320
+Accuracy on validation set : 0.7546804428100586
+
+
+Combination 51 out of 130
+N. layers : 4
+N. neurons : 352
+Accuracy on validation set : 0.7334283590316772
+
+
+Combination 52 out of 130
+N. layers : 4
+N. neurons : 384
+Accuracy on validation set : 0.7671952962875366
+
+
+Combination 53 out of 130
+N. layers : 5
+N. neurons : 4
+Accuracy on validation set : 0.5332620501518249
+
+
+Combination 54 out of 130
+N. layers : 5
+N. neurons : 32
+Accuracy on validation set : 0.7361249566078186
+
+
+Combination 55 out of 130
+N. layers : 5
+N. neurons : 64
+Accuracy on validation set : 0.7546507477760315
+
+
+Combination 56 out of 130
+N. layers : 5
+N. neurons : 96
+Accuracy on validation set : 0.762283205986023
+
+
+Combination 57 out of 130
+N. layers : 5
+N. neurons : 128
+Accuracy on validation set : 0.7579294443130493
+
+
+Combination 58 out of 130
+N. layers : 5
+N. neurons : 160
+Accuracy on validation set : 0.7579234957695007
+
+
+Combination 59 out of 130
+N. layers : 5
+N. neurons : 192
+Accuracy on validation set : 0.7480785250663757
+
+
+Combination 60 out of 130
+N. layers : 5
+N. neurons : 224
+Accuracy on validation set : 0.7617308139801026
+
+
+Combination 61 out of 130
+N. layers : 5
+N. neurons : 256
+Accuracy on validation set : 0.7546863794326782
+
+
+Combination 62 out of 130
+N. layers : 5
+N. neurons : 288
+Accuracy on validation set : 0.7546448111534119
+
+
+Combination 63 out of 130
+N. layers : 5
+N. neurons : 320
+Accuracy on validation set : 0.7372000455856323
+
+
+Combination 64 out of 130
+N. layers : 5
+N. neurons : 352
+Accuracy on validation set : 0.7487081289291382
+
+
+Combination 65 out of 130
+N. layers : 5
+N. neurons : 384
+Accuracy on validation set : 0.7464926481246948
+
+
+Combination 66 out of 130
+N. layers : 6
+N. neurons : 4
+Accuracy on validation set : 0.5332620501518249
+
+
+Combination 67 out of 130
+N. layers : 6
+N. neurons : 32
+Accuracy on validation set : 0.7606438636779785
+
+
+Combination 68 out of 130
+N. layers : 6
+N. neurons : 64
+Accuracy on validation set : 0.758431327342987
+
+
+Combination 69 out of 130
+N. layers : 6
+N. neurons : 96
+Accuracy on validation set : 0.7606557369232178
+
+
+Combination 70 out of 130
+N. layers : 6
+N. neurons : 128
+Accuracy on validation set : 0.7508701682090759
+
+
+Combination 71 out of 130
+N. layers : 6
+N. neurons : 160
+Accuracy on validation set : 0.7546210646629333
+
+
+Combination 72 out of 130
+N. layers : 6
+N. neurons : 192
+Accuracy on validation set : 0.7688257336616516
+
+
+Combination 73 out of 130
+N. layers : 6
+N. neurons : 224
+Accuracy on validation set : 0.7491625189781189
+
+
+Combination 74 out of 130
+N. layers : 6
+N. neurons : 256
+Accuracy on validation set : 0.7416102290153503
+
+
+Combination 75 out of 130
+N. layers : 6
+N. neurons : 288
+Accuracy on validation set : 0.7404728055000305
+
+
+Combination 76 out of 130
+N. layers : 6
+N. neurons : 320
+Accuracy on validation set : 0.7584699511528015
+
+
+Combination 77 out of 130
+N. layers : 6
+N. neurons : 352
+Accuracy on validation set : 0.7579056859016419
+
+
+Combination 78 out of 130
+N. layers : 6
+N. neurons : 384
+Accuracy on validation set : 0.7611843705177307
+
+
+Combination 79 out of 130
+N. layers : 7
+N. neurons : 4
+Accuracy on validation set : 0.7252375841140747
+
+
+Combination 80 out of 130
+N. layers : 7
+N. neurons : 32
+Accuracy on validation set : 0.7622594475746155
+
+
+Combination 81 out of 130
+N. layers : 7
+N. neurons : 64
+Accuracy on validation set : 0.753058910369873
+
+
+Combination 82 out of 130
+N. layers : 7
+N. neurons : 96
+Accuracy on validation set : 0.760652768611908
+
+
+Combination 83 out of 130
+N. layers : 7
+N. neurons : 128
+Accuracy on validation set : 0.7530232787132263
+
+
+Combination 84 out of 130
+N. layers : 7
+N. neurons : 160
+Accuracy on validation set : 0.7546388626098632
+
+
+Combination 85 out of 130
+N. layers : 7
+N. neurons : 192
+Accuracy on validation set : 0.7437485218048095
+
+
+Combination 86 out of 130
+N. layers : 7
+N. neurons : 224
+Accuracy on validation set : 0.7399115204811096
+
+
+Combination 87 out of 130
+N. layers : 7
+N. neurons : 256
+Accuracy on validation set : 0.7496911406517028
+
+
+Combination 88 out of 130
+N. layers : 7
+N. neurons : 288
+Accuracy on validation set : 0.7589926362037659
+
+
+Combination 89 out of 130
+N. layers : 7
+N. neurons : 320
+Accuracy on validation set : 0.7573532938957215
+
+
+Combination 90 out of 130
+N. layers : 7
+N. neurons : 352
+Accuracy on validation set : 0.7426526546478271
+
+
+Combination 91 out of 130
+N. layers : 7
+N. neurons : 384
+Accuracy on validation set : 0.7344737648963928
+
+
+Combination 92 out of 130
+N. layers : 8
+N. neurons : 4
+Accuracy on validation set : 0.6941286563873291
+
+
+Combination 93 out of 130
+N. layers : 8
+N. neurons : 32
+Accuracy on validation set : 0.7535875558853149
+
+
+Combination 94 out of 130
+N. layers : 8
+N. neurons : 64
+Accuracy on validation set : 0.7437396049499512
+
+
+Combination 95 out of 130
+N. layers : 8
+N. neurons : 96
+Accuracy on validation set : 0.748648726940155
+
+
+Combination 96 out of 130
+N. layers : 8
+N. neurons : 128
+Accuracy on validation set : 0.7557317614555359
+
+
+Combination 97 out of 130
+N. layers : 8
+N. neurons : 160
+Accuracy on validation set : 0.7704472661018371
+
+
+Combination 98 out of 130
+N. layers : 8
+N. neurons : 192
+Accuracy on validation set : 0.7660935044288635
+
+
+Combination 99 out of 130
+N. layers : 8
+N. neurons : 224
+Accuracy on validation set : 0.7459253907203675
+
+
+Combination 100 out of 130
+N. layers : 8
+N. neurons : 256
+Accuracy on validation set : 0.7622594356536865
+
+
+Combination 101 out of 130
+N. layers : 8
+N. neurons : 288
+Accuracy on validation set : 0.7601211667060852
+
+
+Combination 102 out of 130
+N. layers : 8
+N. neurons : 320
+Accuracy on validation set : 0.7131800889968872
+
+
+Combination 103 out of 130
+N. layers : 8
+N. neurons : 352
+Accuracy on validation set : 0.7525124669075012
+
+
+Combination 104 out of 130
+N. layers : 8
+N. neurons : 384
+Accuracy on validation set : 0.7535489439964295
+
+
+Combination 105 out of 130
+N. layers : 9
+N. neurons : 4
+Accuracy on validation set : 0.5332620501518249
+
+
+Combination 106 out of 130
+N. layers : 9
+N. neurons : 32
+Accuracy on validation set : 0.7737467288970947
+
+
+Combination 107 out of 130
+N. layers : 9
+N. neurons : 64
+Accuracy on validation set : 0.7600974082946778
+
+
+Combination 108 out of 130
+N. layers : 9
+N. neurons : 96
+Accuracy on validation set : 0.7393620848655701
+
+
+Combination 109 out of 130
+N. layers : 9
+N. neurons : 128
+Accuracy on validation set : 0.7416013240814209
+
+
+Combination 110 out of 130
+N. layers : 9
+N. neurons : 160
+Accuracy on validation set : 0.7393977165222168
+
+
+Combination 111 out of 130
+N. layers : 9
+N. neurons : 192
+Accuracy on validation set : 0.7480814814567566
+
+
+Combination 112 out of 130
+N. layers : 9
+N. neurons : 224
+Accuracy on validation set : 0.7208719372749328
+
+
+Combination 113 out of 130
+N. layers : 9
+N. neurons : 256
+Accuracy on validation set : 0.7366892337799072
+
+
+Combination 114 out of 130
+N. layers : 9
+N. neurons : 288
+Accuracy on validation set : 0.7295527577400207
+
+
+Combination 115 out of 130
+N. layers : 9
+N. neurons : 320
+Accuracy on validation set : 0.7487051486968994
+
+
+Combination 116 out of 130
+N. layers : 9
+N. neurons : 352
+Accuracy on validation set : 0.7393917798995971
+
+
+Combination 117 out of 130
+N. layers : 9
+N. neurons : 384
+Accuracy on validation set : 0.7470598697662354
+
+
+Combination 118 out of 130
+N. layers : 10
+N. neurons : 4
+Accuracy on validation set : 0.5332620501518249
+
+
+Combination 119 out of 130
+N. layers : 10
+N. neurons : 32
+Accuracy on validation set : 0.7508434295654297
+
+
+Combination 120 out of 130
+N. layers : 10
+N. neurons : 64
+Accuracy on validation set : 0.7399441599845886
+
+
+Combination 121 out of 130
+N. layers : 10
+N. neurons : 96
+Accuracy on validation set : 0.7611635804176331
+
+
+Combination 122 out of 130
+N. layers : 10
+N. neurons : 128
+Accuracy on validation set : 0.7628029108047485
+
+
+Combination 123 out of 130
+N. layers : 10
+N. neurons : 160
+Accuracy on validation set : 0.7290716290473938
+
+
+Combination 124 out of 130
+N. layers : 10
+N. neurons : 192
+Accuracy on validation set : 0.7480993032455444
+
+
+Combination 125 out of 130
+N. layers : 10
+N. neurons : 224
+Accuracy on validation set : 0.7502672791481018
+
+
+Combination 126 out of 130
+N. layers : 10
+N. neurons : 256
+Accuracy on validation set : 0.7546507477760315
+
+
+Combination 127 out of 130
+N. layers : 10
+N. neurons : 288
+Accuracy on validation set : 0.7339807748794556
+
+
+Combination 128 out of 130
+N. layers : 10
+N. neurons : 320
+Accuracy on validation set : 0.6517581224441529
+
+
+Combination 129 out of 130
+N. layers : 10
+N. neurons : 352
+Accuracy on validation set : 0.7453848838806152
+
+
+Combination 130 out of 130
+N. layers : 10
+N. neurons : 384
+Accuracy on validation set : 0.7394155383110046
+
+
+***** Optimal configuration found by Grid Search ******
+N. hidden layers : 9
+N. neurons per layer : 32
+Accuracy on validation set : 0.7737467288970947
+Execution time : 00:35:16.75
+Accuracy on test set : 0.769565224647522

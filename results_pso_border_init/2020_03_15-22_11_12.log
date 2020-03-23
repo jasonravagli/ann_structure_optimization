@@ -1,0 +1,729 @@
+
+
+***** PSO Configuration ******
+w_start : 0.9
+w_end : 0.4
+c1 : 0.5
+c2 : 0.5
+swarm_size : 10
+num_generations : 10
+min_init_velocity : [1, 4]
+max_init_velocity : [3, 32]
+max_velocity : [3, 32]
+bounds : [(1, 10), (4, 384)]
+initialization type : InitializationType.QUASI_RANDOM_USING_BORDER
+
+
+***** Particles initialization *****
+
+Border Particle 0
+Position : [1 4]
+Velocity : [0. 0.]
+Objective function value : 0.32276074886322026
+
+Border Particle 1
+Position : [  1 384]
+Velocity : [0. 0.]
+Objective function value : 0.25242040157318113
+
+Border Particle 2
+Position : [10  4]
+Velocity : [0. 0.]
+Objective function value : 0.46673794984817507
+
+Border Particle 3
+Position : [ 10 384]
+Velocity : [0. 0.]
+Objective function value : 0.3494000911712647
+
+Particle 0
+Position : [  5.5 194. ]
+Velocity : [0. 0.]
+
+Particle 1
+Position : [ 7.75 99.  ]
+Velocity : [0. 0.]
+
+Particle 2
+Position : [  3.25 289.  ]
+Velocity : [0. 0.]
+
+Particle 3
+Position : [  4.375 146.5  ]
+Velocity : [0. 0.]
+
+Particle 4
+Position : [  8.875 336.5  ]
+Velocity : [0. 0.]
+
+Particle 5
+Position : [ 6.625 51.5  ]
+Velocity : [0. 0.]
+
+
+***** Particle generation 0 ******
+
+Particle 0
+New position : [ 1.81769773 36.        ]
+New position (int) : [ 2. 36.]
+New velocity : [ 0.81769773 32.        ]
+Objective function value : 0.24044903516769411
+
+Particle 1
+New position : [  1.84993186 378.90040883]
+New position (int) : [  2. 379.]
+New velocity : [ 0.84993186 -5.09959117]
+Objective function value : 0.2268026828765869
+
+Particle 2
+New position : [ 9.80114928 36.        ]
+New position (int) : [10. 36.]
+New velocity : [-0.19885072 32.        ]
+Objective function value : 0.23442920446395876
+
+Particle 3
+New position : [  9.51086161 360.52135717]
+New position (int) : [ 10. 361.]
+New velocity : [ -0.48913839 -23.47864283]
+Objective function value : 0.2638453245162964
+
+Particle 4
+New position : [  5.56367147 196.58324257]
+New position (int) : [  6. 197.]
+New velocity : [0.06367147 2.58324257]
+Objective function value : 0.25726418495178227
+
+Particle 5
+New position : [  8.33201592 131.        ]
+New position (int) : [  8. 131.]
+New velocity : [ 0.58201592 32.        ]
+Objective function value : 0.25893917083740237
+
+Particle 6
+New position : [  5.88987733 310.57812773]
+New position (int) : [  6. 311.]
+New velocity : [ 2.63987733 21.57812773]
+Objective function value : 0.24644215106964107
+
+Particle 7
+New position : [  5.6262495 178.5      ]
+New position (int) : [  6. 178.]
+New velocity : [ 1.2512495 32.       ]
+Objective function value : 0.2556961297988891
+
+Particle 8
+New position : [  8.88663708 336.45345169]
+New position (int) : [  9. 336.]
+New velocity : [ 0.01163708 -0.04654831]
+Objective function value : 0.26337313652038574
+
+Particle 9
+New position : [ 7.34993418 83.5       ]
+New position (int) : [ 7. 84.]
+New velocity : [ 0.72493418 32.        ]
+Objective function value : 0.25735920667648315
+End of generation
+Best position : [  2. 379.]
+Best objective function value : 0.2268026828765869
+
+
+***** Particle generation 1 ******
+
+Particle 0
+New position : [ 2.60619393 68.        ]
+New position (int) : [ 3. 68.]
+New velocity : [ 0.7884962 32.       ]
+Objective function value : 0.24593133926391597
+
+Particle 1
+New position : [  2.69897791 374.64977575]
+New position (int) : [  3. 375.]
+New velocity : [ 0.84904605 -4.25063308]
+Objective function value : 0.2339154243469238
+
+Particle 2
+New position : [ 7.77400425 68.        ]
+New position (int) : [ 8. 68.]
+New velocity : [-2.02714502 32.        ]
+Objective function value : 0.24861606359481814
+
+Particle 3
+New position : [  6.9971313  345.87265619]
+New position (int) : [  7. 346.]
+New velocity : [ -2.51373031 -14.64870098]
+Objective function value : 0.260590398311615
+
+Particle 4
+New position : [  4.64907487 228.58324257]
+New position (int) : [  5. 229.]
+New velocity : [-0.9145966 32.       ]
+Objective function value : 0.25789973735809324
+
+Particle 5
+New position : [  6.20136633 163.        ]
+New position (int) : [  6. 163.]
+New velocity : [-2.13064959 32.        ]
+Objective function value : 0.2529460668563843
+
+Particle 6
+New position : [  6.31637399 340.22591011]
+New position (int) : [  6. 340.]
+New velocity : [ 0.42649667 29.64778238]
+Objective function value : 0.2393798947334289
+
+Particle 7
+New position : [  6.43744379 203.39730064]
+New position (int) : [  6. 203.]
+New velocity : [ 0.81119429 24.89730064]
+Objective function value : 0.257887864112854
+
+Particle 8
+New position : [  5.89253545 354.96174578]
+New position (int) : [  6. 355.]
+New velocity : [-2.99410163 18.50829409]
+Objective function value : 0.23227607011795048
+
+Particle 9
+New position : [  5.16495001 115.5       ]
+New position (int) : [  5. 116.]
+New velocity : [-2.18498417 32.        ]
+Objective function value : 0.2518591046333313
+End of generation
+Best position : [  2. 379.]
+Best objective function value : 0.2268026828765869
+
+
+***** Particle generation 2 ******
+
+Particle 0
+New position : [  2.92760271 100.        ]
+New position (int) : [  3. 100.]
+New velocity : [ 0.32140877 32.        ]
+Objective function value : 0.2410132884979248
+
+Particle 1
+New position : [  2.75876969 375.10450546]
+New position (int) : [  3. 375.]
+New velocity : [0.05979178 0.45472971]
+Objective function value : 0.23550724983215332
+
+Particle 2
+New position : [  4.80469932 100.        ]
+New position (int) : [  5. 100.]
+New velocity : [-2.96930493 32.        ]
+Objective function value : 0.2670646190643311
+
+Particle 3
+New position : [  3.9971313  347.82383038]
+New position (int) : [  4. 348.]
+New velocity : [-3.          1.95117419]
+Objective function value : 0.23444404602050783
+
+Particle 4
+New position : [  3.80749427 260.58324257]
+New position (int) : [  4. 261.]
+New velocity : [-0.8415806 32.       ]
+Objective function value : 0.25299953222274785
+
+Particle 5
+New position : [  4.39662995 194.54210869]
+New position (int) : [  4. 195.]
+New velocity : [-1.80473638 31.54210869]
+Objective function value : 0.23390353918075557
+
+Particle 6
+New position : [  4.65039189 372.22591011]
+New position (int) : [  5. 372.]
+New velocity : [-1.66598211 32.        ]
+Objective function value : 0.2628118395805359
+
+Particle 7
+New position : [  4.66584601 235.39730064]
+New position (int) : [  5. 235.]
+New velocity : [-1.77159778 32.        ]
+Objective function value : 0.2757959127426147
+
+Particle 8
+New position : [  2.89253545 379.69201478]
+New position (int) : [  3. 380.]
+New velocity : [-3.       24.730269]
+Objective function value : 0.242112147808075
+
+Particle 9
+New position : [  2.20226538 147.5       ]
+New position (int) : [  2. 148.]
+New velocity : [-2.96268463 32.        ]
+Objective function value : 0.26225646734237673
+End of generation
+Best position : [  2. 379.]
+Best objective function value : 0.2268026828765869
+
+
+***** Particle generation 3 ******
+
+Particle 0
+New position : [  2.54729891 132.        ]
+New position (int) : [  3. 132.]
+New velocity : [-0.3803038 32.       ]
+Objective function value : 0.24805179834365843
+
+Particle 1
+New position : [  2.23607177 378.35929039]
+New position (int) : [  2. 378.]
+New velocity : [-0.52269792  3.25478493]
+Objective function value : 0.2573295354843139
+
+Particle 2
+New position : [  3.19747632 132.        ]
+New position (int) : [  3. 132.]
+New velocity : [-1.607223 32.      ]
+Objective function value : 0.24965548515319824
+
+Particle 3
+New position : [  0.9971313  363.70511505]
+New position (int) : [  1. 364.]
+New velocity : [-3.         15.88128467]
+Objective function value : 0.26173081398010256
+
+Particle 4
+New position : [  3.03464617 292.58324257]
+New position (int) : [  3. 293.]
+New velocity : [-0.7728481 32.       ]
+Objective function value : 0.24426229000091548
+
+Particle 5
+New position : [  2.47851477 226.54210869]
+New position (int) : [  2. 227.]
+New velocity : [-1.91811518 32.        ]
+Objective function value : 0.22900630235671993
+
+Particle 6
+New position : [  2.9476069  386.30443634]
+New position (int) : [  3. 386.]
+New velocity : [-1.70278499 14.07852622]
+Particle killed at this iteration
+
+Particle 7
+New position : [  2.18393757 267.39730064]
+New position (int) : [  2. 267.]
+New velocity : [-2.48190844 32.        ]
+Objective function value : 0.24536707401275637
+
+Particle 8
+New position : [  0.69272928 396.70676483]
+New position (int) : [  1. 397.]
+New velocity : [-2.19980617 17.01475005]
+Particle killed at this iteration
+
+Particle 9
+New position : [  0.78233591 179.5       ]
+New position (int) : [  1. 180.]
+New velocity : [-1.41992948 32.        ]
+Objective function value : 0.2715104579925537
+End of generation
+Best position : [  2. 379.]
+Best objective function value : 0.2268026828765869
+
+
+***** Particle generation 4 ******
+
+Particle 0
+New position : [  2.18794284 157.31709642]
+New position (int) : [  2. 157.]
+New velocity : [-0.35935607 25.31709642]
+Objective function value : 0.23063969612121582
+
+Particle 1
+New position : [  1.81477963 380.78800774]
+New position (int) : [  2. 381.]
+New velocity : [-0.42129214  2.42871736]
+Objective function value : 0.2497208476066589
+
+Particle 2
+New position : [  2.52804657 164.        ]
+New position (int) : [  3. 164.]
+New velocity : [-0.66942975 32.        ]
+Objective function value : 0.23555773496627808
+
+Particle 3
+New position : [ -0.79318994 375.95968142]
+New position (int) : [ -1. 376.]
+New velocity : [-1.79032124 12.25456636]
+Particle killed at this iteration
+
+Particle 4
+New position : [  2.47690657 315.50821854]
+New position (int) : [  2. 316.]
+New velocity : [-0.5577396  22.92497597]
+Objective function value : 0.22517224550247195
+
+Particle 5
+New position : [  0.81737227 258.54210869]
+New position (int) : [  1. 259.]
+New velocity : [-1.6611425 32.       ]
+Objective function value : 0.25245307683944707
+
+Particle 6
+New position : [  2.26182414 381.55490679]
+New position (int) : [  2. 382.]
+New velocity : [-0.68578276 -4.74952954]
+Objective function value : 0.2491892337799072
+
+Particle 7
+New position : [  0.34089955 299.39730064]
+New position (int) : [  0. 299.]
+New velocity : [-1.84303802 32.        ]
+Particle killed at this iteration
+
+Particle 8
+New position : [  1.64424688 387.46088609]
+New position (int) : [  2. 387.]
+New velocity : [ 0.9515176  -9.24587873]
+Particle killed at this iteration
+
+Particle 9
+New position : [  1.87554328 195.81819169]
+New position (int) : [  2. 196.]
+New velocity : [ 1.09320738 16.31819169]
+Objective function value : 0.24428604841232304
+End of generation
+Best position : [  2. 316.]
+Best objective function value : 0.22517224550247195
+
+
+***** Particle generation 5 ******
+
+Particle 0
+New position : [  1.77039843 189.31709642]
+New position (int) : [  2. 189.]
+New velocity : [-0.41754441 32.        ]
+Objective function value : 0.24809633493423466
+
+Particle 1
+New position : [  1.61776999 356.80416743]
+New position (int) : [  2. 357.]
+New velocity : [ -0.19700964 -23.98384032]
+Objective function value : 0.23005465269088743
+
+Particle 2
+New position : [  5.52804657 144.06147784]
+New position (int) : [  6. 144.]
+New velocity : [  3.         -19.93852216]
+Objective function value : 0.23336005210876465
+
+Particle 3
+New position : [  0.54421481 355.72238655]
+New position (int) : [  1. 356.]
+New velocity : [  1.33740475 -20.23729487]
+Objective function value : 0.25297280550003054
+
+Particle 4
+New position : [  1.89886701 330.63168354]
+New position (int) : [  2. 331.]
+New velocity : [-0.57803956 15.123465  ]
+Objective function value : 0.26061416864395137
+
+Particle 5
+New position : [  0.3274886  290.54210869]
+New position (int) : [  0. 291.]
+New velocity : [-0.48988367 32.        ]
+Particle killed at this iteration
+
+Particle 6
+New position : [  1.9126864  374.85834379]
+New position (int) : [  2. 375.]
+New velocity : [-0.34913774 -6.696563  ]
+Objective function value : 0.25127109289169314
+
+Particle 7
+New position : [ -0.41504755 318.73726481]
+New position (int) : [ -0. 319.]
+New velocity : [-0.7559471  19.33996417]
+Particle killed at this iteration
+
+Particle 8
+New position : [  2.56404393 355.46088609]
+New position (int) : [  3. 355.]
+New velocity : [  0.91979705 -32.        ]
+Objective function value : 0.2459075689315796
+
+Particle 9
+New position : [  2.67406469 227.81819169]
+New position (int) : [  3. 228.]
+New velocity : [ 0.79852141 32.        ]
+Objective function value : 0.2409539103507996
+End of generation
+Best position : [  2. 316.]
+Best objective function value : 0.22517224550247195
+
+
+***** Particle generation 6 ******
+
+Particle 0
+New position : [  1.57954971 211.09260764]
+New position (int) : [  2. 211.]
+New velocity : [-0.19084872 21.77551121]
+Objective function value : 0.2240942001342774
+
+Particle 1
+New position : [  1.69817162 338.31687665]
+New position (int) : [  2. 338.]
+New velocity : [  0.08040163 -18.48729077]
+Objective function value : 0.2535073637962342
+
+Particle 2
+New position : [  5.69103637 176.06147784]
+New position (int) : [  6. 176.]
+New velocity : [ 0.1629898 32.       ]
+Objective function value : 0.23445591926574705
+
+Particle 3
+New position : [  2.41910591 324.09810351]
+New position (int) : [  2. 324.]
+New velocity : [  1.8748911  -31.62428304]
+Objective function value : 0.2382988810539246
+
+Particle 4
+New position : [  1.57793988 335.95910235]
+New position (int) : [  2. 336.]
+New velocity : [-0.32092713  5.32741882]
+Objective function value : 0.2398728966712952
+
+Particle 5
+New position : [  0.80695228 293.83202198]
+New position (int) : [  1. 294.]
+New velocity : [0.47946368 3.28991329]
+Objective function value : 0.2426348328590393
+
+Particle 6
+New position : [  3.49955097 348.44027457]
+New position (int) : [  3. 348.]
+New velocity : [  1.58686458 -26.41806923]
+Objective function value : 0.26650332212448125
+
+Particle 7
+New position : [3.88603543e-03 3.25319033e+02]
+New position (int) : [  0. 325.]
+New velocity : [0.41893359 6.58176847]
+Particle killed at this iteration
+
+Particle 8
+New position : [  4.40961879 323.46088609]
+New position (int) : [  4. 323.]
+New velocity : [  1.84557486 -32.        ]
+Objective function value : 0.2786172509193421
+
+Particle 9
+New position : [  3.10196848 257.70357223]
+New position (int) : [  3. 258.]
+New velocity : [ 0.42790379 29.88538054]
+Objective function value : 0.23014076948165896
+End of generation
+Best position : [  2. 211.]
+Best objective function value : 0.2240942001342774
+
+
+***** Particle generation 7 ******
+
+Particle 0
+New position : [  1.66703029 223.02675069]
+New position (int) : [  2. 223.]
+New velocity : [ 0.08748058 11.93414305]
+Objective function value : 0.24043419361114504
+
+Particle 1
+New position : [  1.86885346 324.61007457]
+New position (int) : [  2. 325.]
+New velocity : [  0.17068184 -13.70680209]
+Objective function value : 0.2469648361206055
+
+Particle 2
+New position : [  4.29940855 207.09644697]
+New position (int) : [  4. 207.]
+New velocity : [-1.39162782 31.03496913]
+Objective function value : 0.26767344474792476
+
+Particle 3
+New position : [  3.52547182 292.09810351]
+New position (int) : [  4. 292.]
+New velocity : [  1.10636591 -32.        ]
+Objective function value : 0.2513185977935791
+
+Particle 4
+New position : [  1.69340952 303.95910235]
+New position (int) : [  2. 304.]
+New velocity : [  0.11546964 -32.        ]
+Objective function value : 0.2404371619224548
+
+Particle 5
+New position : [  2.08809828 261.83202198]
+New position (int) : [  2. 262.]
+New velocity : [  1.28114599 -32.        ]
+Objective function value : 0.25296981334686275
+
+Particle 6
+New position : [  4.67418529 316.44027457]
+New position (int) : [  5. 316.]
+New velocity : [  1.17463432 -32.        ]
+Objective function value : 0.25569314956665035
+
+Particle 7
+New position : [  1.95170613 293.31903328]
+New position (int) : [  2. 293.]
+New velocity : [  1.94782009 -32.        ]
+Objective function value : 0.24427417516708372
+
+Particle 8
+New position : [  4.88936051 291.46088609]
+New position (int) : [  5. 291.]
+New velocity : [  0.47974172 -32.        ]
+Objective function value : 0.24862793684005735
+
+Particle 9
+New position : [  3.17908818 268.77326334]
+New position (int) : [  3. 269.]
+New velocity : [ 0.0771197 11.0696911]
+Objective function value : 0.23445591926574705
+End of generation
+Best position : [  2. 211.]
+Best objective function value : 0.2240942001342774
+
+
+***** Particle generation 8 ******
+
+Particle 0
+New position : [  1.82436975 224.89065957]
+New position (int) : [  2. 225.]
+New velocity : [0.15733946 1.86390888]
+Objective function value : 0.250807785987854
+
+Particle 1
+New position : [  2.06893997 294.41411477]
+New position (int) : [  2. 294.]
+New velocity : [  0.20008651 -30.1959598 ]
+Objective function value : 0.23551319837570195
+
+Particle 2
+New position : [  4.02289965 206.23807717]
+New position (int) : [  4. 206.]
+New velocity : [-0.27650891 -0.85836981]
+Objective function value : 0.2552090764045716
+
+Particle 3
+New position : [  3.9248612  281.13689825]
+New position (int) : [  4. 281.]
+New velocity : [  0.39938937 -10.96120526]
+Objective function value : 0.24856854677200313
+
+Particle 4
+New position : [  1.83088849 271.95910235]
+New position (int) : [  2. 272.]
+New velocity : [  0.13747898 -32.        ]
+Objective function value : 0.2328195452690125
+
+Particle 5
+New position : [  2.67844872 229.83202198]
+New position (int) : [  3. 230.]
+New velocity : [  0.59035044 -32.        ]
+Objective function value : 0.23392137289047243
+
+Particle 6
+New position : [  4.90853277 284.44027457]
+New position (int) : [  5. 284.]
+New velocity : [  0.23434747 -32.        ]
+Objective function value : 0.2513067126274109
+
+Particle 7
+New position : [  2.96237491 261.31903328]
+New position (int) : [  3. 261.]
+New velocity : [  1.01066878 -32.        ]
+Objective function value : 0.25404489040374756
+
+Particle 8
+New position : [  4.92852893 279.6144844 ]
+New position (int) : [  5. 280.]
+New velocity : [  0.03916842 -11.8464017 ]
+Objective function value : 0.2431397080421448
+
+Particle 9
+New position : [  2.55487638 240.93189554]
+New position (int) : [  3. 241.]
+New velocity : [ -0.6242118 -27.8413678]
+Objective function value : 0.24260215759277348
+End of generation
+Best position : [  2. 211.]
+Best objective function value : 0.2240942001342774
+
+
+***** Particle generation 9 ******
+
+Particle 0
+New position : [  1.98896786 218.31111014]
+New position (int) : [  2. 218.]
+New velocity : [ 0.16459811 -6.57954943]
+Objective function value : 0.24480874538421626
+
+Particle 1
+New position : [  2.10094648 270.18012597]
+New position (int) : [  2. 270.]
+New velocity : [  0.0320065 -24.2339888]
+Objective function value : 0.24043121337890627
+
+Particle 2
+New position : [  4.45954692 181.28811703]
+New position (int) : [  4. 181.]
+New velocity : [  0.43664727 -24.94996014]
+Objective function value : 0.2284509420394898
+
+Particle 3
+New position : [  3.6206616 262.4373869]
+New position (int) : [  4. 262.]
+New velocity : [ -0.3041996  -18.69951135]
+Objective function value : 0.23172367811202998
+
+Particle 4
+New position : [  1.97662471 254.353014  ]
+New position (int) : [  2. 254.]
+New velocity : [  0.14573622 -17.60608836]
+Objective function value : 0.2306278228759766
+
+Particle 5
+New position : [  2.64441348 213.21067919]
+New position (int) : [  3. 213.]
+New velocity : [ -0.03403524 -16.62134279]
+Objective function value : 0.2431456446647644
+
+Particle 6
+New position : [  4.40378784 257.62818897]
+New position (int) : [  4. 258.]
+New velocity : [ -0.50474493 -26.81208559]
+Objective function value : 0.2448206305503845
+
+Particle 7
+New position : [  3.1749968  241.86268743]
+New position (int) : [  3. 242.]
+New velocity : [  0.2126219  -19.45634585]
+Objective function value : 0.2382840275764465
+
+Particle 8
+New position : [  4.53314583 280.85061322]
+New position (int) : [  5. 281.]
+New velocity : [-0.3953831   1.23612882]
+Objective function value : 0.23172963857650752
+
+Particle 9
+New position : [  2.3453011  230.22676222]
+New position (int) : [  2. 230.]
+New velocity : [ -0.20957528 -10.70513332]
+Objective function value : 0.24151520729064946
+End of generation
+Best position : [  2. 211.]
+Best objective function value : 0.2240942001342774
+
+
+***** Optimal configuration found by PSO ******
+N. hidden layers : 2.0
+N. neurons per layer : 211.0
+Accuracy on validation set : 0.7759057998657226
+Execution time : 00:25:07.26
+Accuracy on test set : 0.730434775352478
