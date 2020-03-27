@@ -13,6 +13,7 @@ from ParticleAnnFactory import ParticleAnnFactory
 from ParticleAnnKFoldFactory import ParticleAnnKFoldFactory
 from Ann import Ann
 
+
 def article_configuration_training(preprocessing):
     n_fold = 5
     generate_validation_set = False
@@ -74,8 +75,6 @@ def pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid,
     pso_hyperparameters.c2 = 0.5
     pso_hyperparameters.swarm_size = 10
     pso_hyperparameters.num_generations = 10
-    pso_hyperparameters.min_init_velocity = [1, 4]
-    pso_hyperparameters.max_init_velocity = [3, 32]
     pso_hyperparameters.max_velocity = [3, 32]
     pso_hyperparameters.initialization_type = initialization_type
     pso_hyperparameters.use_local_search = use_local_search
@@ -87,8 +86,6 @@ def pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid,
     logging.info("c2 : " + str(pso_hyperparameters.c2))
     logging.info("swarm_size : " + str(pso_hyperparameters.swarm_size))
     logging.info("num_generations : " + str(pso_hyperparameters.num_generations))
-    logging.info("min_init_velocity : " + str(pso_hyperparameters.min_init_velocity))
-    logging.info("max_init_velocity : " + str(pso_hyperparameters.max_init_velocity))
     logging.info("max_velocity : " + str(pso_hyperparameters.max_velocity))
     logging.info("bounds : " + str([layers_bounds, neurons_bounds]))
     logging.info("initialization type : " + str(pso_hyperparameters.initialization_type))

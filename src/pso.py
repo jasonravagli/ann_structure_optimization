@@ -25,18 +25,20 @@ class PSOHyperparameters:
         self.c2 = 0.5
         self.swarm_size = 10
         self.num_generations = 10
-        # min and max particle velocity used in random initialization
-        self.min_init_velocity = [2] * n
-        self.max_init_velocity = [5] * n
-        # min and max particle velocity (if the particle velocity is below the lower bound, the particle is retired)
-        # self.min_velocity = 1
         self.max_velocity = [5] * n
         self.initialization_type = InitializationType.QUASI_RANDOM
-        # True = at each iteration if the particle has a non-integer position evaluates all the nearby integer positions
+        # True = perform memetic variant of the algorithm
         self.use_local_search = False
 
 
+# Number of function evalutations performed by the PSO
+n_function_evaluations = 0
+
+
 def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
+    global n_function_evaluations
+    n_function_evaluations = 0
+
     # Number of bounds must be equal to the problem dimension (number of problem hyperparameters)
     assert len(bounds) == n
 
@@ -49,15 +51,13 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
     c2 = pso_hyperparameters.c2
     swarm_size = pso_hyperparameters.swarm_size
     num_generations = pso_hyperparameters.num_generations
-    min_init_velocity = pso_hyperparameters.min_init_velocity
-    max_init_velocity = pso_hyperparameters.max_init_velocity
     max_velocity = pso_hyperparameters.max_velocity
     initialization_type = pso_hyperparameters.initialization_type
     use_local_search = pso_hyperparameters.use_local_search
 
     particles = []
-    best_position = None
-    best_value = math.inf
+    global_best_position = None
+    global_best_value = math.inf
 
     # Random initialize the particles and evaluate them
     print("\n\n***** Particles initialization *****")
@@ -83,9 +83,9 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
 
         particle.best_position = np.array(particle.position)
         particle.best_value = particle_value
-        if particle_value < best_value:
-            best_value = particle_value
-            best_position = np.array(particle.position_integer)
+        if particle_value < global_best_value:
+            global_best_value = particle_value
+            global_best_position = np.array(particle.position_integer)
 
         particles.append(particle)
 
@@ -105,9 +105,9 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
 
         particle.best_position = np.array(particle.position)
         particle.best_value = particle_value
-        if particle_value < best_value:
-            best_value = particle_value
-            best_position = np.array(particle.position_integer)
+        if particle_value < global_best_value:
+            global_best_value = particle_value
+            global_best_position = np.array(particle.position_integer)
 
         particles.append(particle)
 
@@ -127,9 +127,9 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
 
         particle.best_position = np.array(particle.position)
         particle.best_value = particle_value
-        if particle_value < best_value:
-            best_value = particle_value
-            best_position = np.array(particle.position_integer)
+        if particle_value < global_best_value:
+            global_best_value = particle_value
+            global_best_position = np.array(particle.position_integer)
 
         particles.append(particle)
 
@@ -149,9 +149,9 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
 
         particle.best_position = np.array(particle.position)
         particle.best_value = particle_value
-        if particle_value < best_value:
-            best_value = particle_value
-            best_position = np.array(particle.position_integer)
+        if particle_value < global_best_value:
+            global_best_value = particle_value
+            global_best_position = np.array(particle.position_integer)
 
         particles.append(particle)
 
@@ -183,9 +183,9 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
         particle.best_position = np.array(position)
         particle.best_value = particle_value
 
-        if particle_value < best_value:
-            best_value = particle_value
-            best_position = np.array(particle.position_integer)
+        if particle_value < global_best_value:
+            global_best_value = particle_value
+            global_best_position = np.array(particle.position_integer)
 
         print("Particle " + str(i) + " - Position " + str(particle.position))
         logging.debug("\nParticle " + str(i))
@@ -200,8 +200,8 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
         logging.debug("\n\n***** Particle generation " + str(i) + " ******")
 
         # Auxiliary variables to temporary store best population indexes (the update of the best indexes is done after the particles update)
-        best_position_updated = best_position
-        best_value_updated = best_value
+        global_best_position_i = global_best_position
+        global_best_value_i = global_best_value
 
         for j in range(swarm_size):
             logging.debug("\nParticle " + str(j))
@@ -209,21 +209,16 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
             # Move particle
             particle = particles[j]
 
-            # Particle with zero velocity are retired
-            # if np.count_nonzero(particle.velocity) != 0:
-            # Change the random hyperparameters
+            # Update the random hyperparameters
             r1 = np.random.rand()
             r2 = np.random.rand()
 
             # Particle swarm optimization update formulae
             velocity_updated = particle.w * particle.velocity + c1 * r1 * \
                                (particle.best_position - particle.position) + c2 * r2 * (
-                                       best_position - particle.position)
-            # Round the velocity array to integer values (we are solving a problem with integer variables)
-            # velocity_updated = np.around(velocity_updated)
+                                       global_best_position - particle.position)
 
             # Check if the updated velocity respect the velocity bounds
-            # if np.count_nonzero(velocity_updated) != 0:
             for k in range(n):
                 velocity_sign = np.sign(velocity_updated[k])
                 velocity_updated[k] = velocity_sign * min(abs(velocity_updated[k]), max_velocity[k])
@@ -231,59 +226,57 @@ def get_minimum(particle_factory, n, bounds, pso_hyperparameters=None):
             position_updated = particle.position + velocity_updated
 
             # Linear decreasing inertia weight
-            # particle.w = w + 0.5 * math.exp(-LA.norm(particle.position - particle.best_position))
             particle.w = (w_start - w_end) * (num_generations - (i + 1)) / num_generations + w_end
-
-            # Handle constraints
-            # feasiblize_particle(particle, position_updated, velocity_updated, bounds)
 
             particle.position = position_updated
             particle.velocity = velocity_updated
 
-            if use_local_search:
-                particle_value_updated, best_value_updated, best_position_updated = local_search(particle, n, best_value_updated, best_position_updated)
+            # Handle integer variables
+            particle.position_integer = np.around(particle.position)
+
+            # Handle constraints using Death Penalty approach (non-feasible particles are not evaluated)
+            if is_solution_feasible(particle.position_integer, bounds):
+                if use_local_search:
+                    # Memetic version of the algorithm
+                    particle_value_updated = perform_memetic_variant(particle, n, bounds)
+
+                    # Update global best according to the new value of the particle
+                    if particle.best_value < global_best_value_i:
+                        global_best_value_i = particle.best_value
+                        global_best_position_i = particle.position_integer
+                else:
+                    particle_value_updated = particle.get_value()
+                    n_function_evaluations += 1
+
+                    # Updating best indexes
+                    if particle_value_updated < particle.best_value:
+                        particle.best_value = particle_value_updated
+                        particle.best_position = np.array(particle.position_integer)
+
+                    if particle_value_updated < global_best_value_i:
+                        global_best_value_i = particle_value_updated
+                        global_best_position_i = particle.position_integer
 
                 logging.debug("New position : " + str(particle.position))
                 logging.debug("New position (int) : " + str(particle.position_integer))
                 logging.debug("New velocity : " + str(particle.velocity))
                 logging.debug("Objective function value : " + str(particle_value_updated))
             else:
-                # Handle integer variables
-                particle.position_integer = np.around(particle.position)
-
-                # Handle constraints using Death Penalty approach (non-feasible particles are not evaluated)
-                if is_solution_feasible(particle.position_integer, bounds):
-                    particle_value_updated, best_value_updated, best_position_updated = evaluate_particle(particle, best_value_updated, best_position_updated)
-
-                    # # Updating best indexes
-                    # particle_value_updated = particle.get_value()
-                    # if particle_value_updated < particle.best_value:  # and is_solution_feasible(particle.position, bounds):
-                    #     particle.best_value = particle_value_updated
-                    #     particle.best_position = np.array(particle.position_integer)
-                    #
-                    # if particle_value_updated < best_value_updated:
-                    #     best_value_updated = particle_value_updated
-                    #     best_position_updated = particle.position_integer
-
-                    logging.debug("New position : " + str(particle.position))
-                    logging.debug("New position (int) : " + str(particle.position_integer))
-                    logging.debug("New velocity : " + str(particle.velocity))
-                    logging.debug("Objective function value : " + str(particle_value_updated))
-                else:
-                    logging.debug("New position : " + str(particle.position))
-                    logging.debug("New position (int) : " + str(particle.position_integer))
-                    logging.debug("New velocity : " + str(particle.velocity))
-                    logging.debug("Particle killed at this iteration")
+                logging.debug("New position : " + str(particle.position))
+                logging.debug("New position (int) : " + str(particle.position_integer))
+                logging.debug("New velocity : " + str(particle.velocity))
+                logging.debug("Particle killed at this iteration")
 
         # Update best population indexes
-        best_value = best_value_updated
-        best_position = np.array(best_position_updated)
+        global_best_value = global_best_value_i
+        global_best_position = np.array(global_best_position_i)
 
-        logging.debug("End of generation")
-        logging.debug("Best position : " + str(best_position))
-        logging.debug("Best objective function value : " + str(best_value))
+        logging.debug("\n\nEnd of generation")
+        logging.debug("Best position : " + str(global_best_position))
+        logging.debug("Best objective function value : " + str(global_best_value))
 
-    return best_position, best_value
+    logging.debug("\n\nTotal function evaluations: " + str(n_function_evaluations))
+    return global_best_position, global_best_value
 
 
 def is_solution_feasible(solution, bounds):
@@ -294,43 +287,59 @@ def is_solution_feasible(solution, bounds):
     return True
 
 
-def local_search(particle, n , best_value_updated, best_position_updated):
-    # JR Il codice va generalizzato ma ho bisogno di fare delle prove immediate
-    assert n == 2
+def perform_memetic_variant(particle, n, bounds):
+    global n_function_evaluations
 
-    # Controllo il valore nelle 4 posizioni intere attorno alla posizione corrente della particella
-    position_integer_0 = np.array([math.trunc(particle.position[0]), math.trunc(particle.position[1])])
-    particle.position_integer = position_integer_0
-    particle_value_updated_0, best_value_updated, best_position_updated = evaluate_particle(particle, best_value_updated, best_position_updated)
+    # Evaluate the particle in the current integer position
+    current_value = particle.get_value()
+    n_function_evaluations += 1
+    current_position = particle.position_integer
+    best_value = current_value
+    best_position = current_position
 
-    position_integer_1 = np.array([math.trunc(particle.position[0]), math.ceil(particle.position[1])])
-    particle.position_integer = position_integer_1
-    particle_value_updated_1, best_value_updated, best_position_updated = evaluate_particle(particle, best_value_updated, best_position_updated)
+    logging.debug("\n --- Performing local search --- ")
+    logging.debug(" Position : " + str(current_position))
+    logging.debug(" With value : " + str(current_value))
 
-    position_integer_2 = np.array([math.ceil(particle.position[0]), math.trunc(particle.position[1])])
-    particle.position_integer = position_integer_2
-    particle_value_updated_2, best_value_updated, best_position_updated = evaluate_particle(particle, best_value_updated, best_position_updated)
+    local_minimum_found = False
+    while not local_minimum_found:
+        # evaluate all 2*n integer positions adjacent to the current position
+        for i in range(n):
+            particle.position_integer = np.array(current_position)
+            particle.position_integer[i] += 1
+            if is_solution_feasible(particle.position_integer, bounds):
+                value = particle.get_value()
+                n_function_evaluations += 1
 
-    position_integer_3 = np.array([math.ceil(particle.position[0]), math.ceil(particle.position[1])])
-    particle.position_integer = position_integer_3
-    particle_value_updated_3, best_value_updated, best_position_updated = evaluate_particle(particle, best_value_updated, best_position_updated)
+                if value < best_value:
+                    best_value = value
+                    best_position = particle.position_integer
 
-    list_positions = [particle_value_updated_0, particle_value_updated_1, particle_value_updated_2, particle_value_updated_3]
-    list_values = [particle_value_updated_0, particle_value_updated_1, particle_value_updated_2, particle_value_updated_3]
-    particle_value_updated = min(list_values)
-    particle.position_integer = list_positions[list_values.index(particle_value_updated)]
-    return particle_value_updated, best_value_updated, best_position_updated
+            particle.position_integer = np.array(current_position)
+            particle.position_integer[i] -= 1
+            if is_solution_feasible(particle.position_integer, bounds):
+                value = particle.get_value()
+                n_function_evaluations += 1
 
+                if value < best_value:
+                    best_value = value
+                    best_position = particle.position_integer
 
-def evaluate_particle(particle, best_value_updated, best_position_updated):
-    # Updating best indexes
-    particle_value_updated = particle.get_value()
-    if particle_value_updated < particle.best_value:
-        particle.best_value = particle_value_updated
-        particle.best_position = np.array(particle.position_integer)
+        if best_value == current_value:
+            local_minimum_found = True
+            logging.debug(" --- End local search --- \n")
+        else:
+            current_position = best_position
+            current_value = best_value
+            logging.debug(" Move to : " + str(current_position))
+            logging.debug(" With value : " + str(current_value))
 
-    if particle_value_updated < best_value_updated:
-        best_value_updated = particle_value_updated
-        best_position_updated = particle.position_integer
+    if current_value < particle.best_value:
+        # Move the particle into the new best personal position
+        particle.position = np.array(current_position)
+        particle.position_integer = np.array(current_position)
+        particle.best_value = current_value
+        particle.best_position = np.array(current_position)
 
-    return particle_value_updated, best_value_updated, best_position_updated
+    # Return the value associated to the current position of the particle
+    return current_value

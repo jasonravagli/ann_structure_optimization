@@ -16,7 +16,7 @@ logging.basicConfig(filename=log_filename, format='%(message)s', level=logging.D
 
 if __name__ == "__main__":
     # Read command line arguments
-    parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+    parser = argparse.ArgumentParser(description='ANN Structure Optimization')
     parser.add_argument("--method",
                         choices=["all", "pso", "pso_init_borders", "pso_local_search", "grid_search", "quasi_random"],
                         default="pso", type=str, help="Optimization method to use")
@@ -69,7 +69,7 @@ if __name__ == "__main__":
             shutil.copy(log_filename, directory_pso_border_init + "/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")
 
         if method == 'all' or method == 'pso_local_search':
-            print("\n\n****** PSO (Local Search) Method ******")
+            print("\n\n****** PSO Method (Memetic Variant) ******")
             open(log_filename, 'w').close()
             optimization_functions.pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test, use_local_search=True)
             shutil.copy(log_filename, directory_pso_local_search + "/" + time.strftime("%Y_%m_%d-%H_%M_%S") + ".log")

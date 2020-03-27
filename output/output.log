@@ -5,14 +5,12 @@ w_start : 0.9
 w_end : 0.4
 c1 : 0.5
 c2 : 0.5
-swarm_size : 2
-num_generations : 1
-min_init_velocity : [1, 4]
-max_init_velocity : [3, 32]
+swarm_size : 4
+num_generations : 4
 max_velocity : [3, 32]
 bounds : [(1, 10), (4, 384)]
 initialization type : InitializationType.QUASI_RANDOM
-use local search : False
+use local search : True
 
 
 ***** Particles initialization *****
@@ -25,28 +23,171 @@ Particle 1
 Position : [ 7.75 99.  ]
 Velocity : [0. 0.]
 
+Particle 2
+Position : [  3.25 289.  ]
+Velocity : [0. 0.]
+
+Particle 3
+Position : [  4.375 146.5  ]
+Velocity : [0. 0.]
+
 
 ***** Particle generation 0 ******
 
 Particle 0
-New position : [  6.38088637 162.        ]
-New position (int) : [  6. 162.]
-New velocity : [  0.88088637 -32.        ]
-Objective function value : 0.2513275146484375
+New position : [  5.67190202 194.        ]
+New position (int) : [  6. 194.]
+New velocity : [0.17190202 0.        ]
+Objective function value : 0.24264670610427852
 
 Particle 1
-New position : [ 7.84390409 99.        ]
-New position (int) : [ 8. 99.]
-New velocity : [0.09390409 0.        ]
-Objective function value : 0.2714956045150757
+New position : [  7.17775217 130.0648822 ]
+New position (int) : [  7. 130.]
+New velocity : [-0.57224783 31.0648822 ]
+Objective function value : 0.2666369676589966
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  4. 265.]
+ With value : 0.24044308662414549
+ --- End local search --- 
+
+New position : [  4. 265.]
+New position (int) : [  4. 265.]
+New velocity : [  0.68732574 -23.74397999]
+Objective function value : 0.24044308662414549
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  5. 152.]
+ With value : 0.2486309051513672
+ Move to : [  4. 152.]
+ With value : 0.23009326457977297
+ --- End local search --- 
+
+New position : [  4. 152.]
+New position (int) : [  4. 152.]
+New velocity : [0.17409    5.08878476]
+Objective function value : 0.23009326457977297
+
+
 End of generation
-Best position : [ 8. 99.]
-Best objective function value : 0.23934426307678225
+Best position : [  4. 152.]
+Best objective function value : 0.23009326457977297
+
+
+***** Particle generation 1 ******
+
+Particle 0
+New position : [  5.16295812 179.6446175 ]
+New position (int) : [  5. 180.]
+New velocity : [ -0.5089439 -14.3553825]
+Objective function value : 0.2519185066223144
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [  6. 159.]
+ With value : 0.24046093225479126
+ Move to : [  6. 160.]
+ With value : 0.22409123182296753
+ --- End local search --- 
+
+New position : [  6. 160.]
+New position (int) : [  6. 160.]
+New velocity : [-1.50910407 28.87506722]
+Objective function value : 0.22409123182296753
+
+Particle 2
+New position : [  4.33908139 248.60594854]
+New position (int) : [  4. 249.]
+New velocity : [  0.33908139 -16.39405146]
+Objective function value : 0.24857447147369383
+
+Particle 3
+New position : [  4.13966709 155.87418063]
+New position (int) : [  4. 156.]
+New velocity : [0.13966709 3.87418063]
+Objective function value : 0.23935019969940186
+
+
+End of generation
+Best position : [  6. 160.]
+Best objective function value : 0.22409123182296753
+
+
+***** Particle generation 2 ******
+
+Particle 0
+New position : [  4.96376641 168.1395855 ]
+New position (int) : [  5. 168.]
+New velocity : [ -0.19919171 -11.505032  ]
+Objective function value : 0.2628326296806336
+
+Particle 1
+New position : [  5.87610262 148.89551603]
+New position (int) : [  6. 149.]
+New velocity : [ -0.12389738 -11.10448397]
+Objective function value : 0.23771085739135744
+
+Particle 2
+New position : [  5.18712977 216.60594854]
+New position (int) : [  5. 217.]
+New velocity : [  0.84804838 -32.        ]
+Objective function value : 0.2518709897994995
+
+Particle 3
+New position : [  4.77717904 155.62715621]
+New position (int) : [  5. 156.]
+New velocity : [ 0.63751196 -0.24702442]
+Objective function value : 0.24970301389694216
+
+
+End of generation
+Best position : [  6. 160.]
+Best objective function value : 0.22409123182296753
+
+
+***** Particle generation 3 ******
+
+Particle 0
+New position : [  5.18264303 166.59078345]
+New position (int) : [  5. 167.]
+New velocity : [ 0.21887662 -1.54880205]
+Objective function value : 0.2431397080421448
+
+Particle 1
+New position : [  5.98074462 141.08835308]
+New position (int) : [  6. 141.]
+New velocity : [ 0.10464201 -7.80716295]
+Objective function value : 0.2524025917053223
+
+Particle 2
+New position : [  5.13488828 216.93395892]
+New position (int) : [  5. 217.]
+New velocity : [-0.05224149  0.32801038]
+Objective function value : 0.26494417190551756
+
+Particle 3
+New position : [  5.36941973 154.04110321]
+New position (int) : [  5. 154.]
+New velocity : [ 0.59224069 -1.586053  ]
+Objective function value : 0.2420705676078796
+
+
+End of generation
+Best position : [  6. 160.]
+Best objective function value : 0.22409123182296753
+
+
+Total function evaluations: 36
 
 
 ***** Optimal configuration found by PSO ******
-N. hidden layers : 8.0
-N. neurons per layer : 99.0
-Accuracy on validation set : 0.7606557369232178
-Execution time : 00:02:20.36
-Accuracy on test set : 0.760869562625885
+N. hidden layers : 6.0
+N. neurons per layer : 160.0
+Accuracy on validation set : 0.7759087681770325
+Execution time : 00:28:36.20
+Accuracy on test set : 0.7152174115180969
