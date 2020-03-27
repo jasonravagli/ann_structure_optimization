@@ -294,6 +294,8 @@ def perform_memetic_variant(particle, n, bounds):
     current_value = particle.get_value()
     n_function_evaluations += 1
     current_position = particle.position_integer
+    # We keep track of the previous position to not evaluate the objective function there again
+    previous_position = current_position
     best_value = current_value
     best_position = current_position
 
@@ -307,7 +309,7 @@ def perform_memetic_variant(particle, n, bounds):
         for i in range(n):
             particle.position_integer = np.array(current_position)
             particle.position_integer[i] += 1
-            if is_solution_feasible(particle.position_integer, bounds):
+            if not np.array_equal(particle.position_integer, previous_position) and is_solution_feasible(particle.position_integer, bounds):
                 value = particle.get_value()
                 n_function_evaluations += 1
 
@@ -317,7 +319,7 @@ def perform_memetic_variant(particle, n, bounds):
 
             particle.position_integer = np.array(current_position)
             particle.position_integer[i] -= 1
-            if is_solution_feasible(particle.position_integer, bounds):
+            if not np.array_equal(particle.position_integer, previous_position) and is_solution_feasible(particle.position_integer, bounds):
                 value = particle.get_value()
                 n_function_evaluations += 1
 
@@ -329,6 +331,7 @@ def perform_memetic_variant(particle, n, bounds):
             local_minimum_found = True
             logging.debug(" --- End local search --- \n")
         else:
+            previous_position = current_position
             current_position = best_position
             current_value = best_value
             logging.debug(" Move to : " + str(current_position))
