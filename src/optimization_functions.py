@@ -14,41 +14,8 @@ from ParticleAnnKFoldFactory import ParticleAnnKFoldFactory
 from Ann import Ann
 
 
-def article_configuration_training(preprocessing):
-    n_fold = 5
-    generate_validation_set = False
-
-    n_neurons = 467
-    optimizer = 'adam'
-    learning_rate = 0.00158
-    n_epochs = 375
-    n_batches = 3
-
-    x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-                                                                                                           generate_validation_set, preprocessing)
-    y_train = keras.utils.to_categorical(y_train, 2)
-
-    batch_size = int(len(x_train)/n_batches)
-
-    model = Sequential()
-    model.add(Dense(n_neurons, activation='relu'))
-    model.add(Dense(2, activation='sigmoid'))
-    model.compile(optimizer=keras.optimizers.Adam(learning_rate=learning_rate), loss='binary_crossentropy', metrics=['accuracy'])
-    es = EarlyStopping(monitor='val_accuracy', mode='max', patience=20, min_delta=0.005, verbose=1)
-    model.fit(x_train, y_train, epochs=n_epochs, batch_size=32, verbose=0, validation_split=0.25, callbacks=[es])
-
-    index_accuracy = model.metrics_names.index('accuracy')
-    accuracy = model.evaluate(x_test, y_test)[index_accuracy]
-
-    #print("\nAccuracy " + str(accuracy))
-    return accuracy
-
-
 def pso_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test, initialization_type=pso.InitializationType.QUASI_RANDOM, use_local_search=False):
     print("\nReading dataset...")
-
-    # x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-    #                                                                                                        generate_validation_set)
 
     print("\n**** Dataset statistics *****")
     print("Training samples: " + str(len(x_train)))
@@ -141,9 +108,6 @@ def grid_search_optimization(generate_validation_set, n_fold, x_train, y_train, 
             # [4, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 272, 288, 304, 320, 336, 352, 368, 384]]
             [4, 32, 64, 96, 128, 160, 192, 224, 256, 288, 320, 352, 384]]
 
-    # x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-    #                                                                                                        generate_validation_set)
-
     print("\n**** Dataset statistics *****")
     print("Training samples: " + str(len(x_train)))
     if generate_validation_set:
@@ -202,9 +166,6 @@ def grid_search_optimization(generate_validation_set, n_fold, x_train, y_train, 
 
 
 def quasi_random_optimization(generate_validation_set, n_fold, x_train, y_train, x_valid, y_valid, x_test, y_test):
-
-    # x_train, y_train, x_valid, y_valid, x_test, y_test = dataset_reader.read_diabetic_retinopathy_debrecen(n_fold,
-    #                                                                                                        generate_validation_set)
 
     print("\n**** Dataset statistics *****")
     print("Training samples: " + str(len(x_train)))
