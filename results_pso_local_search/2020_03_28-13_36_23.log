@@ -1,0 +1,1535 @@
+
+
+***** PSO Configuration ******
+w_start : 0.9
+w_end : 0.4
+c1 : 0.5
+c2 : 0.5
+swarm_size : 10
+num_generations : 10
+max_velocity : [3, 32]
+bounds : [(1, 10), (4, 384)]
+initialization type : InitializationType.QUASI_RANDOM
+use local search : True
+
+
+***** Particles initialization *****
+
+Particle 0
+Position : [  5.5 194. ]
+Velocity : [0. 0.]
+
+Particle 1
+Position : [ 7.75 99.  ]
+Velocity : [0. 0.]
+
+Particle 2
+Position : [  3.25 289.  ]
+Velocity : [0. 0.]
+
+Particle 3
+Position : [  4.375 146.5  ]
+Velocity : [0. 0.]
+
+Particle 4
+Position : [  8.875 336.5  ]
+Velocity : [0. 0.]
+
+Particle 5
+Position : [ 6.625 51.5  ]
+Velocity : [0. 0.]
+
+Particle 6
+Position : [  2.125 241.5  ]
+Velocity : [0. 0.]
+
+Particle 7
+Position : [  2.6875 122.75  ]
+Velocity : [0. 0.]
+
+Particle 8
+Position : [  7.1875 312.75  ]
+Velocity : [0. 0.]
+
+Particle 9
+Position : [ 9.4375 27.75  ]
+Velocity : [0. 0.]
+
+
+***** Particle generation 0 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [  7. 162.]
+ With value : 0.2295171022415161
+ --- End local search --- 
+
+New position : [  7. 162.]
+New position (int) : [  7. 162.]
+New velocity : [  1.30852731 -32.        ]
+Objective function value : 0.2295171022415161
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [ 8. 76.]
+ With value : 0.2704413294792175
+ Move to : [ 8. 77.]
+ With value : 0.23607746362686155
+ --- End local search --- 
+
+New position : [ 8. 77.]
+New position (int) : [ 8. 77.]
+New velocity : [  0.4056822  -23.04274921]
+Objective function value : 0.23607746362686155
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  4. 257.]
+ With value : 0.2534450173377991
+ Move to : [  5. 257.]
+ With value : 0.23775837421417234
+ --- End local search --- 
+
+New position : [  4.48168117 257.        ]
+New position (int) : [  5. 256.]
+New velocity : [  1.23168117 -32.        ]
+Objective function value : 0.23775837421417234
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  5. 141.]
+ With value : 0.25081372261047363
+ Move to : [  4. 141.]
+ With value : 0.24318425655364995
+ Move to : [  4. 140.]
+ With value : 0.22843312025070195
+ --- End local search --- 
+
+New position : [  4. 140.]
+New position (int) : [  4. 140.]
+New velocity : [ 0.22875887 -5.86117329]
+Objective function value : 0.22843312025070195
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [  9. 304.]
+ With value : 0.25733249187469487
+ Move to : [  9. 305.]
+ With value : 0.23664172887802126
+ --- End local search --- 
+
+New position : [  9. 305.]
+New position (int) : [  9. 305.]
+New velocity : [  0.05296158 -32.        ]
+Objective function value : 0.23664172887802126
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [ 8. 41.]
+ With value : 0.24420289993286137
+ Move to : [ 9. 41.]
+ With value : 0.2431604981422424
+ Move to : [10. 41.]
+ With value : 0.2366238951683044
+ --- End local search --- 
+
+New position : [10. 41.]
+New position (int) : [10. 41.]
+New velocity : [  1.07083031 -10.59558416]
+Objective function value : 0.2366238951683044
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  5. 210.]
+ With value : 0.243151581287384
+ Move to : [  4. 210.]
+ With value : 0.23338085412979126
+ Move to : [  4. 211.]
+ With value : 0.23336896896362302
+ --- End local search --- 
+
+New position : [  4. 211.]
+New position (int) : [  4. 211.]
+New velocity : [  3. -32.]
+Objective function value : 0.23336896896362302
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [ 5. 94.]
+ With value : 0.22895581722259517
+ --- End local search --- 
+
+New position : [ 5. 94.]
+New position (int) : [ 5. 94.]
+New velocity : [  1.91283521 -28.71146715]
+Objective function value : 0.22895581722259517
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  8. 281.]
+ With value : 0.24534926414489744
+ --- End local search --- 
+
+New position : [  8.00592801 280.75      ]
+New position (int) : [  8. 280.]
+New velocity : [  0.81842801 -32.        ]
+Objective function value : 0.24534926414489744
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [ 9. 28.]
+ With value : 0.26661322116851804
+ Move to : [ 9. 27.]
+ With value : 0.24912984371185298
+ --- End local search --- 
+
+New position : [ 9.39674072 27.77329101]
+New position (int) : [ 9. 26.]
+New velocity : [-0.04075928  0.02329101]
+Objective function value : 0.24912984371185298
+
+
+End of generation
+Best position : [  4. 140.]
+Best objective function value : 0.22843312025070195
+
+
+***** Particle generation 1 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [  8. 131.]
+ With value : 0.2497564911842346
+ Move to : [  9. 131.]
+ With value : 0.2453908205032349
+ Move to : [ 10. 131.]
+ With value : 0.2213768124580383
+ --- End local search --- 
+
+New position : [ 10. 131.]
+New position (int) : [ 10. 131.]
+New velocity : [  0.53833632 -31.40868721]
+Objective function value : 0.2213768124580383
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [ 6. 88.]
+ With value : 0.22790449857711792
+ Move to : [ 6. 89.]
+ With value : 0.22192028760910032
+ --- End local search --- 
+
+New position : [ 6. 89.]
+New position (int) : [ 6. 89.]
+New velocity : [-1.58816194 10.85828431]
+Objective function value : 0.22192028760910032
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  5. 225.]
+ With value : 0.25073057413101196
+ Move to : [  5. 224.]
+ With value : 0.23281657695770264
+ --- End local search --- 
+
+New position : [  5. 224.]
+New position (int) : [  5. 224.]
+New velocity : [  0.22150813 -32.        ]
+Objective function value : 0.23281657695770264
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  4. 135.]
+ With value : 0.24154192209243774
+ Move to : [  5. 135.]
+ With value : 0.23171478509902954
+ --- End local search --- 
+
+New position : [  4.19444504 135.0180027 ]
+New position (int) : [  5. 134.]
+New velocity : [ 0.19444504 -4.9819973 ]
+Objective function value : 0.23171478509902954
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [  9. 275.]
+ With value : 0.2535192370414734
+ Move to : [  9. 274.]
+ With value : 0.24155085086822514
+ Move to : [  9. 273.]
+ With value : 0.23118318319320674
+ --- End local search --- 
+
+New position : [  9. 273.]
+New position (int) : [  9. 273.]
+New velocity : [-2.77857901e-02 -2.96025035e+01]
+Objective function value : 0.23118318319320674
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [10. 43.]
+ With value : 0.23390057086944582
+ --- End local search --- 
+
+New position : [10. 43.]
+New position (int) : [10. 43.]
+New velocity : [0.27018016 1.55417601]
+Objective function value : 0.23390057086944582
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  7. 179.]
+ With value : 0.24923378229141235
+ Move to : [  7. 180.]
+ With value : 0.239890706539154
+ Move to : [  8. 180.]
+ With value : 0.23662390708923342
+ Move to : [  8. 181.]
+ With value : 0.2338827610015869
+ Move to : [  7. 181.]
+ With value : 0.23336005210876465
+ --- End local search --- 
+
+New position : [  7. 181.]
+New position (int) : [  7. 181.]
+New velocity : [  2.55 -32.  ]
+Objective function value : 0.23336005210876465
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [ 6. 85.]
+ With value : 0.22791637182235713
+ --- End local search --- 
+
+New position : [ 6. 85.]
+New position (int) : [ 6. 85.]
+New velocity : [ 1.29101036 -8.99936681]
+Objective function value : 0.22791637182235713
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  8. 254.]
+ With value : 0.2518917798995972
+ Move to : [  7. 254.]
+ With value : 0.22840045690536503
+ --- End local search --- 
+
+New position : [  7. 254.]
+New position (int) : [  7. 254.]
+New velocity : [  0.43033011 -26.51919524]
+Objective function value : 0.22840045690536503
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [ 9. 31.]
+ With value : 0.24261701107025146
+ --- End local search --- 
+
+New position : [ 9.21174377 31.27010282]
+New position (int) : [ 9. 30.]
+New velocity : [-0.18499695  3.4968118 ]
+Objective function value : 0.24261701107025146
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 2 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [ 10. 106.]
+ With value : 0.2410014271736145
+ Move to : [  9. 106.]
+ With value : 0.23395401239395142
+ --- End local search --- 
+
+New position : [ 10.43066906 105.87305024]
+New position (int) : [  9. 105.]
+New velocity : [  0.43066906 -25.12694976]
+Objective function value : 0.23395401239395142
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [  5. 105.]
+ With value : 0.24428606033325195
+ Move to : [  5. 106.]
+ With value : 0.23775837421417234
+ Move to : [  4. 106.]
+ With value : 0.22954382896423342
+ Move to : [  4. 105.]
+ With value : 0.2289409637451172
+ Move to : [  3. 105.]
+ With value : 0.22353290319442753
+ --- End local search --- 
+
+New position : [  5.46106589 105.36837965]
+New position (int) : [  3. 104.]
+New velocity : [-0.53893411 16.36837965]
+Objective function value : 0.22353290319442753
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  7. 192.]
+ With value : 0.23553694486618038
+ --- End local search --- 
+
+New position : [  6.71345081 192.        ]
+New position (int) : [  7. 191.]
+New velocity : [  1.71345081 -32.        ]
+Objective function value : 0.23553694486618038
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  5. 132.]
+ With value : 0.25901341438293457
+ Move to : [  5. 131.]
+ With value : 0.24810525178909304
+ Move to : [  4. 131.]
+ With value : 0.23499050140380862
+ Move to : [  3. 131.]
+ With value : 0.22681753635406499
+ --- End local search --- 
+
+New position : [  3. 131.]
+New position (int) : [  3. 131.]
+New velocity : [ 1.19706838 -3.44928756]
+Objective function value : 0.22681753635406499
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [  9. 241.]
+ With value : 0.2693424701690674
+ Move to : [  8. 241.]
+ With value : 0.2513275027275086
+ Move to : [  8. 240.]
+ With value : 0.2480191230773926
+ --- End local search --- 
+
+New position : [  9.40563087 241.        ]
+New position (int) : [  8. 239.]
+New velocity : [  0.40563087 -32.        ]
+Objective function value : 0.2480191230773926
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [10. 57.]
+ With value : 0.23498455286026
+ Move to : [ 9. 57.]
+ With value : 0.23393918275833125
+ --- End local search --- 
+
+New position : [10.21614413 57.35861076]
+New position (int) : [ 9. 56.]
+New velocity : [ 0.21614413 14.35861076]
+Objective function value : 0.23393918275833125
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  9. 153.]
+ With value : 0.2442563652992249
+ --- End local search --- 
+
+New position : [  9.17941143 153.07647611]
+New position (int) : [  9. 152.]
+New velocity : [  2.17941143 -27.92352389]
+Objective function value : 0.2442563652992249
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [ 8. 90.]
+ With value : 0.24973864555358882
+ Move to : [ 8. 89.]
+ With value : 0.2453433036804199
+ Move to : [ 7. 89.]
+ With value : 0.2344262361526489
+ --- End local search --- 
+
+New position : [ 8.09341603 89.9974956 ]
+New position (int) : [ 7. 88.]
+New velocity : [2.09341603 4.9974956 ]
+Objective function value : 0.2344262361526489
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  8. 225.]
+ With value : 0.2513690948486328
+ Move to : [  8. 226.]
+ With value : 0.24534331560134892
+ --- End local search --- 
+
+New position : [  7.52324018 225.44662406]
+New position (int) : [  8. 225.]
+New velocity : [  0.52324018 -28.55337594]
+Objective function value : 0.24534331560134892
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [ 9. 63.]
+ With value : 0.24534925222396853
+ --- End local search --- 
+
+New position : [ 9.47063358 63.27010282]
+New position (int) : [ 9. 62.]
+New velocity : [ 0.25888981 32.        ]
+Objective function value : 0.24534925222396853
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 3 ******
+
+Particle 0
+New position : [10.65323796 92.88749318]
+New position (int) : [11. 93.]
+New velocity : [  0.2225689  -12.98555706]
+Particle killed at this iteration
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [  7. 127.]
+ With value : 0.2534925103187561
+ Move to : [  7. 128.]
+ With value : 0.24589272737503054
+ Move to : [  7. 129.]
+ With value : 0.23117130994796753
+ --- End local search --- 
+
+New position : [  6.99285311 127.09605583]
+New position (int) : [  7. 128.]
+New velocity : [ 1.53178722 21.72767619]
+Objective function value : 0.23117130994796753
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  9. 160.]
+ With value : 0.2595153212547302
+ Move to : [  9. 159.]
+ With value : 0.23281657695770264
+ --- End local search --- 
+
+New position : [  8.70551792 160.        ]
+New position (int) : [  9. 158.]
+New velocity : [  1.99206711 -32.        ]
+Objective function value : 0.23281657695770264
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  6. 128.]
+ With value : 0.25510810613632207
+ Move to : [  6. 129.]
+ With value : 0.24595806598663328
+ Move to : [  6. 130.]
+ With value : 0.24373960494995117
+ Move to : [  7. 130.]
+ With value : 0.2289795637130737
+ --- End local search --- 
+
+New position : [  6.         128.41303433]
+New position (int) : [  7. 129.]
+New velocity : [ 3.         -2.58696567]
+Objective function value : 0.2289795637130737
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [ 10. 209.]
+ With value : 0.26165657043457036
+ Move to : [ 10. 208.]
+ With value : 0.23060702085495
+ --- End local search --- 
+
+New position : [ 10. 208.]
+New position (int) : [ 10. 208.]
+New velocity : [  0.41812721 -32.        ]
+Objective function value : 0.23060702085495
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [10. 89.]
+ With value : 0.2366654872894287
+ --- End local search --- 
+
+New position : [10.27283544 89.35861076]
+New position (int) : [10. 88.]
+New velocity : [ 0.05669132 32.        ]
+Objective function value : 0.2366654872894287
+
+Particle 6
+New position : [ 10.7376542  131.52311672]
+New position (int) : [ 11. 132.]
+New velocity : [  1.55824277 -21.55335939]
+Particle killed at this iteration
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [  9. 102.]
+ With value : 0.24810228347778318
+ --- End local search --- 
+
+New position : [  9.28186465 102.00362583]
+New position (int) : [  9. 101.]
+New velocity : [ 1.18844862 12.00613023]
+Objective function value : 0.24810228347778318
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  8. 193.]
+ With value : 0.28680210113525395
+ Move to : [  8. 194.]
+ With value : 0.23066345453262327
+ --- End local search --- 
+
+New position : [  8.37143714 193.44662406]
+New position (int) : [  8. 193.]
+New velocity : [  0.84819696 -32.        ]
+Objective function value : 0.23066345453262327
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [10. 89.]
+ With value : 0.269814670085907
+ Move to : [10. 90.]
+ With value : 0.24534627199172976
+ Move to : [10. 91.]
+ With value : 0.23660013675689695
+ --- End local search --- 
+
+New position : [ 9.72741453 88.78422309]
+New position (int) : [10. 90.]
+New velocity : [ 0.25678095 25.51412027]
+Objective function value : 0.23660013675689695
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 4 ******
+
+Particle 0
+New position : [10.54487714 99.20969554]
+New position (int) : [11. 99.]
+New velocity : [-0.10836082  6.32220236]
+Particle killed at this iteration
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [  8. 129.]
+ With value : 0.2545527458190918
+ Move to : [  7. 129.]
+ With value : 0.23879187107086186
+ --- End local search --- 
+
+New position : [  8.42296387 129.03456305]
+New position (int) : [  7. 128.]
+New velocity : [1.43011076 1.93850722]
+Objective function value : 0.23879187107086186
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  9. 161.]
+ With value : 0.23719112873077397
+ Move to : [  8. 161.]
+ With value : 0.23066049814224243
+ --- End local search --- 
+
+New position : [  8. 161.]
+New position (int) : [  8. 161.]
+New velocity : [0.03090943 0.57523984]
+Objective function value : 0.23066049814224243
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  9. 128.]
+ With value : 0.2557169198989868
+ --- End local search --- 
+
+New position : [  9.         127.73547282]
+New position (int) : [  9. 127.]
+New velocity : [ 3.         -0.67756151]
+Objective function value : 0.2557169198989868
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [ 10. 176.]
+ With value : 0.2562158465385437
+ Move to : [  9. 176.]
+ With value : 0.22792232036590576
+ --- End local search --- 
+
+New position : [  9. 176.]
+New position (int) : [  9. 176.]
+New velocity : [  0.29268905 -32.        ]
+Objective function value : 0.22792232036590576
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [ 10. 120.]
+ With value : 0.2507781028747559
+ Move to : [  9. 120.]
+ With value : 0.2486190438270569
+ --- End local search --- 
+
+New position : [ 10.1631934  120.49519318]
+New position (int) : [  9. 119.]
+New velocity : [-0.10964204 31.13658242]
+Objective function value : 0.2486190438270569
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [ 10. 141.]
+ With value : 0.23551615476608279
+ --- End local search --- 
+
+New position : [  9.94764841 140.96320667]
+New position (int) : [ 10. 140.]
+New velocity : [-0.79000579  9.44008995]
+Objective function value : 0.23551615476608279
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [  9. 117.]
+ With value : 0.23933831453323362
+ --- End local search --- 
+
+New position : [  8.98168989 116.75113939]
+New position (int) : [  9. 116.]
+New velocity : [-0.30017476 14.74751356]
+Objective function value : 0.23933831453323362
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  9. 191.]
+ With value : 0.27810050249099727
+ Move to : [  8. 191.]
+ With value : 0.24152708053588867
+ --- End local search --- 
+
+New position : [  8.52146968 190.8512861 ]
+New position (int) : [  8. 190.]
+New velocity : [ 0.15003254 -2.59533796]
+Objective function value : 0.24152708053588867
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [10. 90.]
+ With value : 0.24479092359542842
+ Move to : [10. 89.]
+ With value : 0.24098360538482666
+ --- End local search --- 
+
+New position : [ 9.85147715 90.14996961]
+New position (int) : [10. 88.]
+New velocity : [0.12406262 1.36574652]
+Objective function value : 0.24098360538482666
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 5 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [ 10. 125.]
+ With value : 0.2415241003036499
+ --- End local search --- 
+
+New position : [ 10.10769996 124.71635493]
+New position (int) : [ 10. 124.]
+New velocity : [-0.43717718 25.50665939]
+Objective function value : 0.2415241003036499
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [ 10. 125.]
+ With value : 0.2540864944458008
+ Move to : [ 10. 124.]
+ With value : 0.2458749175071716
+ --- End local search --- 
+
+New position : [  9.64808768 124.68283107]
+New position (int) : [ 10. 123.]
+New velocity : [ 1.22512381 -4.35173198]
+Objective function value : 0.2458749175071716
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  8. 157.]
+ With value : 0.24972974061965947
+ Move to : [  8. 156.]
+ With value : 0.23502910137176514
+ --- End local search --- 
+
+New position : [  8.32894753 156.74105992]
+New position (int) : [  8. 155.]
+New velocity : [ 0.32894753 -4.25894008]
+Objective function value : 0.23502910137176514
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  9. 130.]
+ With value : 0.26004395484924314
+ Move to : [  9. 131.]
+ With value : 0.22787480354309086
+ --- End local search --- 
+
+New position : [  8.59324035 129.71548428]
+New position (int) : [  9. 130.]
+New velocity : [-0.40675965  1.98001146]
+Objective function value : 0.22787480354309086
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [  9. 152.]
+ With value : 0.25026727914810176
+ Move to : [  9. 153.]
+ With value : 0.2371495604515076
+ Move to : [  8. 153.]
+ With value : 0.23551912307739253
+ --- End local search --- 
+
+New position : [  9.27134909 151.55044575]
+New position (int) : [  8. 152.]
+New velocity : [  0.27134909 -24.44955425]
+Objective function value : 0.23551912307739253
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [ 10. 137.]
+ With value : 0.26280589103698726
+ Move to : [  9. 137.]
+ With value : 0.2317028880119324
+ --- End local search --- 
+
+New position : [  9. 137.]
+New position (int) : [  9. 137.]
+New velocity : [-0.08230276 16.59523842]
+Objective function value : 0.2317028880119324
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  8. 163.]
+ With value : 0.2529876470565796
+ Move to : [  8. 162.]
+ With value : 0.250807785987854
+ Move to : [  9. 162.]
+ With value : 0.23714362382888798
+ --- End local search --- 
+
+New position : [  8.18460819 163.32374941]
+New position (int) : [  9. 161.]
+New velocity : [-1.76304022 22.36054273]
+Objective function value : 0.23714362382888798
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [  9. 130.]
+ With value : 0.25075136423110966
+ Move to : [  9. 131.]
+ With value : 0.2409598469734192
+ Move to : [  9. 132.]
+ With value : 0.23553099632263186
+ --- End local search --- 
+
+New position : [  9.0515176  130.06825079]
+New position (int) : [  9. 131.]
+New velocity : [ 0.06982771 13.3171114 ]
+Objective function value : 0.23553099632263186
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  9. 194.]
+ With value : 0.2700136661529541
+ Move to : [  9. 193.]
+ With value : 0.2458956956863403
+ Move to : [  9. 192.]
+ With value : 0.243151581287384
+ Move to : [  9. 191.]
+ With value : 0.23772867918014529
+ --- End local search --- 
+
+New position : [  8.52239162 193.845084  ]
+New position (int) : [  9. 190.]
+New velocity : [9.21939184e-04 2.99379790e+00]
+Objective function value : 0.23772867918014529
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [10. 84.]
+ With value : 0.26164171695709226
+ Move to : [10. 83.]
+ With value : 0.24587489366531368
+ Move to : [10. 82.]
+ With value : 0.23771679401397705
+ Move to : [10. 81.]
+ With value : 0.23661797046661381
+ --- End local search --- 
+
+New position : [ 9.85202979 84.49605913]
+New position (int) : [10. 80.]
+New velocity : [ 5.52637348e-04 -5.65391048e+00]
+Objective function value : 0.23661797046661381
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 6 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [ 10. 144.]
+ With value : 0.24261997938156132
+ --- End local search --- 
+
+New position : [  9.77136404 144.33953348]
+New position (int) : [ 10. 143.]
+New velocity : [-0.33633592 19.62317855]
+Objective function value : 0.24261997938156132
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [ 10. 120.]
+ With value : 0.2453373670578003
+ --- End local search --- 
+
+New position : [ 10.03133967 120.065357  ]
+New position (int) : [ 10. 119.]
+New velocity : [ 0.38325199 -4.61747408]
+Objective function value : 0.2453373670578003
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  9. 147.]
+ With value : 0.25243822336196897
+ Move to : [  9. 148.]
+ With value : 0.24536707401275637
+ Move to : [  8. 148.]
+ With value : 0.23769898414611812
+ Move to : [  8. 147.]
+ With value : 0.23711094856262205
+ --- End local search --- 
+
+New position : [  8.99087758 146.73760271]
+New position (int) : [  8. 146.]
+New velocity : [  0.66193005 -10.00345721]
+Objective function value : 0.23711094856262205
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  8. 132.]
+ With value : 0.2699037790298462
+ Move to : [  9. 132.]
+ With value : 0.2486309051513672
+ --- End local search --- 
+
+New position : [  8.19486598 131.64609958]
+New position (int) : [  9. 131.]
+New velocity : [-0.39837437  1.9306153 ]
+Objective function value : 0.2486309051513672
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [ 10. 135.]
+ With value : 0.22847172021865847
+ --- End local search --- 
+
+New position : [  9.57776698 134.9735808 ]
+New position (int) : [ 10. 134.]
+New velocity : [  0.3064179  -16.57686495]
+Objective function value : 0.22847172021865847
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [  9. 146.]
+ With value : 0.2507959246635437
+ Move to : [  9. 145.]
+ With value : 0.24427121877670288
+ Move to : [  9. 144.]
+ With value : 0.24046090841293333
+ Move to : [  9. 143.]
+ With value : 0.23824839591979985
+ --- End local search --- 
+
+New position : [  9.17916683 145.58585215]
+New position (int) : [  9. 142.]
+New velocity : [0.17916683 8.58585215]
+Objective function value : 0.23824839591979985
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  7. 181.]
+ With value : 0.238803768157959
+ Move to : [  7. 180.]
+ With value : 0.23118020296096797
+ --- End local search --- 
+
+New position : [  7. 180.]
+New position (int) : [  7. 180.]
+New velocity : [-1.36062962 17.60569801]
+Objective function value : 0.23118020296096797
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [  9. 135.]
+ With value : 0.24368613958358765
+ Move to : [ 10. 135.]
+ With value : 0.24047280550003047
+ --- End local search --- 
+
+New position : [  9.28049832 134.78512102]
+New position (int) : [ 10. 134.]
+New velocity : [0.22898072 4.71687022]
+Objective function value : 0.24047280550003047
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  8. 201.]
+ With value : 0.27093431949615476
+ Move to : [  7. 201.]
+ With value : 0.24045200347900386
+ --- End local search --- 
+
+New position : [  8.35688244 201.09077401]
+New position (int) : [  7. 200.]
+New velocity : [-0.16550918  7.24569001]
+Objective function value : 0.24045200347900386
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [10. 54.]
+ With value : 0.2649174213409424
+ Move to : [10. 53.]
+ With value : 0.23387681245803837
+ --- End local search --- 
+
+New position : [10. 53.]
+New position (int) : [10. 53.]
+New velocity : [ -0.20056399 -30.70713843]
+Objective function value : 0.23387681245803837
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 7 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [ 10. 147.]
+ With value : 0.2600528717041015
+ Move to : [ 10. 148.]
+ With value : 0.22627702951431272
+ --- End local search --- 
+
+New position : [  9.73090998 146.69978418]
+New position (int) : [ 10. 147.]
+New velocity : [-0.04045405  2.3602507 ]
+Objective function value : 0.22627702951431272
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [  9. 110.]
+ With value : 0.2420765042304993
+ Move to : [  8. 110.]
+ With value : 0.22956759929656978
+ --- End local search --- 
+
+New position : [  8.63258309 109.7774561 ]
+New position (int) : [  8. 109.]
+New velocity : [ -1.39875658 -10.2879009 ]
+Objective function value : 0.22956759929656978
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  9. 140.]
+ With value : 0.23767520189285274
+ --- End local search --- 
+
+New position : [  9.40386898 140.45682738]
+New position (int) : [  9. 139.]
+New velocity : [ 0.4129914  -6.28077533]
+Objective function value : 0.23767520189285274
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  8. 132.]
+ With value : 0.2529876470565796
+ Move to : [  8. 131.]
+ With value : 0.24205275774002077
+ --- End local search --- 
+
+New position : [  8.27375753 132.37898723]
+New position (int) : [  8. 130.]
+New velocity : [0.07889156 0.73288766]
+Objective function value : 0.24205275774002077
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [ 10. 131.]
+ With value : 0.26001724004745486
+ Move to : [ 10. 130.]
+ With value : 0.24317535161972048
+ --- End local search --- 
+
+New position : [  9.74067377 130.55925823]
+New position (int) : [ 10. 129.]
+New velocity : [ 0.16290679 -4.41432257]
+Objective function value : 0.24317535161972048
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [  9. 143.]
+ With value : 0.24425041675567627
+ Move to : [  8. 143.]
+ With value : 0.2360804200172424
+ --- End local search --- 
+
+New position : [  9.36694246 143.27849845]
+New position (int) : [  8. 142.]
+New velocity : [ 0.18777563 -2.3073537 ]
+Objective function value : 0.2360804200172424
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  7. 172.]
+ With value : 0.24203493595123293
+ --- End local search --- 
+
+New position : [  7.35258559 171.70124657]
+New position (int) : [  7. 171.]
+New velocity : [ 0.35258559 -8.29875343]
+Objective function value : 0.24203493595123293
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [  9. 133.]
+ With value : 0.26331670284271236
+ Move to : [  9. 134.]
+ With value : 0.2360536932945252
+ --- End local search --- 
+
+New position : [  9.39674547 132.65747597]
+New position (int) : [  9. 133.]
+New velocity : [ 0.11624715 -2.12764504]
+Objective function value : 0.2360536932945252
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  9. 182.]
+ With value : 0.2530232787132263
+ Move to : [  9. 181.]
+ With value : 0.24153600931167607
+ Move to : [ 10. 181.]
+ With value : 0.23773164749145503
+ --- End local search --- 
+
+New position : [  8.8073137  181.91155212]
+New position (int) : [ 10. 180.]
+New velocity : [  0.45043127 -19.17922189]
+Objective function value : 0.23773164749145503
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [10. 61.]
+ With value : 0.2322820067405701
+ Move to : [10. 62.]
+ With value : 0.23117426633834837
+ --- End local search --- 
+
+New position : [10. 62.]
+New position (int) : [10. 62.]
+New velocity : [-0.1103102   8.33632931]
+Objective function value : 0.23117426633834837
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 8 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [ 10. 133.]
+ With value : 0.24697673320770264
+ --- End local search --- 
+
+New position : [  9.96478665 133.05448737]
+New position (int) : [ 10. 132.]
+New velocity : [  0.23387666 -13.64529681]
+Objective function value : 0.24697673320770264
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [  7. 101.]
+ With value : 0.23446186780929568
+ Move to : [  6. 101.]
+ With value : 0.23117426633834837
+ --- End local search --- 
+
+New position : [  7.21184668 101.486549  ]
+New position (int) : [  6. 100.]
+New velocity : [-1.42073641 -8.2909071 ]
+Objective function value : 0.23117426633834837
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  9. 140.]
+ With value : 0.2322463631629944
+ --- End local search --- 
+
+New position : [  9.39586519 140.2108766 ]
+New position (int) : [  9. 139.]
+New velocity : [-0.00800378 -0.24595078]
+Objective function value : 0.2322463631629944
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  7. 132.]
+ With value : 0.23447673320770268
+ --- End local search --- 
+
+New position : [  6.89618605 131.67578363]
+New position (int) : [  7. 131.]
+New velocity : [-1.37757148 -0.70320361]
+Objective function value : 0.23447673320770268
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [ 10. 145.]
+ With value : 0.2383137345314026
+ --- End local search --- 
+
+New position : [  9.60037501 144.71202177]
+New position (int) : [ 10. 144.]
+New velocity : [-0.14029876 14.15276354]
+Objective function value : 0.2383137345314026
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [ 10. 136.]
+ With value : 0.2568068385124207
+ Move to : [ 10. 137.]
+ With value : 0.24316346645355225
+ --- End local search --- 
+
+New position : [  9.68964266 136.47278709]
+New position (int) : [ 10. 136.]
+New velocity : [ 0.3227002  -6.80571136]
+Objective function value : 0.24316346645355225
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  8. 158.]
+ With value : 0.26611427068710325
+ Move to : [  7. 158.]
+ With value : 0.23063080310821538
+ --- End local search --- 
+
+New position : [  7. 158.]
+New position (int) : [  7. 158.]
+New velocity : [  0.84461883 -14.07659288]
+Objective function value : 0.23063080310821538
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [  9. 115.]
+ With value : 0.2415597558021545
+ Move to : [  8. 115.]
+ With value : 0.2235328912734985
+ --- End local search --- 
+
+New position : [  8. 115.]
+New position (int) : [  8. 115.]
+New velocity : [ -0.73157815 -17.18301014]
+Objective function value : 0.2235328912734985
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  9. 162.]
+ With value : 0.24482359886169436
+ Move to : [  9. 163.]
+ With value : 0.24319909811019902
+ --- End local search --- 
+
+New position : [  9.23857672 162.47678148]
+New position (int) : [  9. 162.]
+New velocity : [  0.43126302 -19.43477064]
+Objective function value : 0.24319909811019902
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [10. 70.]
+ With value : 0.22243406772613528
+ --- End local search --- 
+
+New position : [10. 70.]
+New position (int) : [10. 70.]
+New velocity : [-0.0551551   7.54521204]
+Objective function value : 0.22243406772613528
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+***** Particle generation 9 ******
+
+Particle 0
+
+ --- Performing local search --- 
+ Position : [ 10. 126.]
+ With value : 0.24530768394470215
+ Move to : [ 10. 125.]
+ With value : 0.23119504451751705
+ --- End local search --- 
+
+New position : [ 10.08188595 126.22244732]
+New position (int) : [ 10. 124.]
+New velocity : [ 0.1170993  -6.83204005]
+Objective function value : 0.23119504451751705
+
+Particle 1
+
+ --- Performing local search --- 
+ Position : [  7. 102.]
+ With value : 0.24484438896179195
+ --- End local search --- 
+
+New position : [  6.98059685 102.13885879]
+New position (int) : [  7. 101.]
+New velocity : [-0.23124983  0.65230979]
+Objective function value : 0.24484438896179195
+
+Particle 2
+
+ --- Performing local search --- 
+ Position : [  9. 147.]
+ With value : 0.26829413175582884
+ Move to : [  9. 148.]
+ With value : 0.23937691450119014
+ Move to : [  9. 149.]
+ With value : 0.2328195571899414
+ --- End local search --- 
+
+New position : [  8.9252657  147.02605119]
+New position (int) : [  9. 148.]
+New velocity : [-0.47059949  6.81517459]
+Objective function value : 0.2328195571899414
+
+Particle 3
+
+ --- Performing local search --- 
+ Position : [  6. 131.]
+ With value : 0.24374852180480955
+ Move to : [  6. 132.]
+ With value : 0.23989961147308347
+ Move to : [  7. 132.]
+ With value : 0.22628296613693233
+ --- End local search --- 
+
+New position : [  7. 132.]
+New position (int) : [  7. 132.]
+New velocity : [-0.53657928 -0.4438801 ]
+Objective function value : 0.22628296613693233
+
+Particle 4
+
+ --- Performing local search --- 
+ Position : [  9. 160.]
+ With value : 0.2235625982284546
+ --- End local search --- 
+
+New position : [  9. 160.]
+New position (int) : [  9. 160.]
+New velocity : [-0.21942402 15.70433677]
+Objective function value : 0.2235625982284546
+
+Particle 5
+
+ --- Performing local search --- 
+ Position : [ 10. 132.]
+ With value : 0.23058625459671023
+ --- End local search --- 
+
+New position : [ 10. 132.]
+New position (int) : [ 10. 132.]
+New velocity : [ 0.12744279 -4.70953835]
+Objective function value : 0.23058625459671023
+
+Particle 6
+
+ --- Performing local search --- 
+ Position : [  9. 141.]
+ With value : 0.2775124669075012
+ Move to : [  9. 140.]
+ With value : 0.22628296613693233
+ --- End local search --- 
+
+New position : [  9. 140.]
+New position (int) : [  9. 140.]
+New velocity : [  1.58921306 -17.21667808]
+Objective function value : 0.22628296613693233
+
+Particle 7
+
+ --- Performing local search --- 
+ Position : [  8. 112.]
+ With value : 0.258431327342987
+ Move to : [  9. 112.]
+ With value : 0.23825432062149043
+ Move to : [  9. 113.]
+ With value : 0.23664766550064087
+ --- End local search --- 
+
+New position : [  8.24614022 111.87044857]
+New position (int) : [  9. 112.]
+New velocity : [ 0.24614022 -3.12955143]
+Objective function value : 0.23664766550064087
+
+Particle 8
+
+ --- Performing local search --- 
+ Position : [  9. 186.]
+ With value : 0.27042349576950075
+ Move to : [  8. 186.]
+ With value : 0.23664171695709224
+ --- End local search --- 
+
+New position : [  8.64959403 185.70903378]
+New position (int) : [  8. 185.]
+New velocity : [-0.58898269 23.2322523 ]
+Objective function value : 0.23664171695709224
+
+Particle 9
+
+ --- Performing local search --- 
+ Position : [10. 85.]
+ With value : 0.2975172162055969
+ Move to : [10. 86.]
+ With value : 0.232825493812561
+ --- End local search --- 
+
+New position : [ 9.97518021 85.44739816]
+New position (int) : [10. 85.]
+New velocity : [-0.02481979 15.44739816]
+Objective function value : 0.232825493812561
+
+
+End of generation
+Best position : [ 10. 131.]
+Best objective function value : 0.2213768124580383
+
+
+Total function evaluations: 747
+
+
+***** Optimal configuration found by PSO ******
+N. hidden layers : 10.0
+N. neurons per layer : 131.0
+Accuracy on validation set : 0.7786231875419617
+Execution time : 03:45:59.47
+Accuracy on test set : 0.6521739363670349
